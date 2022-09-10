@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/</loc>
+         <loc>https://furisha.github.io/doc/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/index.en/</loc>
+         <loc>https://furisha.github.io/doc/index.en/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/about/</loc>
+         <loc>https://furisha.github.io/doc/pages/about/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/code_examples/selenium/ce_selenium_java/</loc>
+         <loc>https://furisha.github.io/doc/pages/code_examples/selenium/ce_selenium_java/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/code_examples/selenium/ce_seleniumbase_python/</loc>
+         <loc>https://furisha.github.io/doc/pages/code_examples/selenium/ce_seleniumbase_python/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/framework_setup/fs_cypress/</loc>
+         <loc>https://furisha.github.io/doc/pages/framework_setup/fs_cypress/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/framework_setup/fs_selenium_java/</loc>
+         <loc>https://furisha.github.io/doc/pages/framework_setup/fs_selenium_java/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/framework_setup/fs_selenium_python/</loc>
+         <loc>https://furisha.github.io/doc/pages/framework_setup/fs_selenium_python/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/framework_setup/fs_selenium_python_seleniumbase/</loc>
+         <loc>https://furisha.github.io/doc/pages/framework_setup/fs_selenium_python_seleniumbase/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/qa-box/qa_code_review/</loc>
+         <loc>https://furisha.github.io/doc/pages/qa-box/qa_code_review/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/qa-box/qa_coding_guidelines/</loc>
+         <loc>https://furisha.github.io/doc/pages/qa-box/qa_coding_guidelines/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/qa-box/qa_coding_guidelines_advanced/</loc>
+         <loc>https://furisha.github.io/doc/pages/qa-box/qa_coding_guidelines_advanced/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/qa-box/qa_expert/</loc>
+         <loc>https://furisha.github.io/doc/pages/qa-box/qa_expert/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/qa-box/qa_good_practice/</loc>
+         <loc>https://furisha.github.io/doc/pages/qa-box/qa_good_practice/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/qa-box/qa_skills/</loc>
+         <loc>https://furisha.github.io/doc/pages/qa-box/qa_skills/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pages.gitlab.io/furmandocs/pages/qa-box/qa_terms/</loc>
+         <loc>https://furisha.github.io/doc/pages/qa-box/qa_terms/</loc>
          <lastmod>2022-09-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
