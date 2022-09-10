@@ -1,0 +1,1543 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pages.gitlab.io/furmandocs/pages/code_examples/selenium/ce_selenium_java/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+    
+    
+      
+        <title>Selenium Java - Furman QA Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#selenium-java-example" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://pages.gitlab.io/furmandocs/" title="Furman QA Docs" class="md-header__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furman QA Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Selenium Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://pages.gitlab.io/furmandocs/" title="Furman QA Docs" class="md-nav__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    Furman QA Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          QA Box
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QA Box" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          QA Box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa-box/qa_code_review/" class="md-nav__link">
+        Code Review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa-box/qa_skills/" class="md-nav__link">
+        Automation Skills
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa-box/qa_coding_guidelines/" class="md-nav__link">
+        Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa-box/qa_coding_guidelines_advanced/" class="md-nav__link">
+        Advanced Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa-box/qa_good_practice/" class="md-nav__link">
+        Automation Good Practice
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa-box/qa_terms/" class="md-nav__link">
+        QA Terms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa-box/qa_expert/" class="md-nav__link">
+        QA Expert
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Framework Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Framework Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Framework Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../framework_setup/fs_cypress/" class="md-nav__link">
+        Cypress (Javascript)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../framework_setup/fs_selenium_java/" class="md-nav__link">
+        Selenium (Java)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../framework_setup/fs_selenium_python/" class="md-nav__link">
+        Selenium (Python)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../framework_setup/fs_selenium_python_seleniumbase/" class="md-nav__link">
+        Selenium (Python-SeleniumBase)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Code Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Code Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Selenium Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Selenium Java
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initialize" class="md-nav__link">
+    Initialize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locators" class="md-nav__link">
+    Locators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-elements-operations" class="md-nav__link">
+    Basic Elements Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-element-operations" class="md-nav__link">
+    Advanced Element Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-browser-operations" class="md-nav__link">
+    Basic Browser Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-browser-operations" class="md-nav__link">
+    Advanced Browser Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-browser-configurations" class="md-nav__link">
+    Advanced Browser Configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taking-a-screenshot" class="md-nav__link">
+    Taking a Screenshot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-html-source-of-webelement" class="md-nav__link">
+    Get HTML Source of WebElement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-javascript" class="md-nav__link">
+    Execute JavaScript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-page-load-timeoout" class="md-nav__link">
+    Set Page Load Timeoout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-tests-in-a-headless-browser" class="md-nav__link">
+    Execute Tests in a Headless Browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-an-element-is-visible" class="md-nav__link">
+    Check If an Element Is Visible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-cookies" class="md-nav__link">
+    Manage Cookies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximize-window" class="md-nav__link">
+    Maximize Window
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drag-and-drop" class="md-nav__link">
+    Drag and Drop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-a-file" class="md-nav__link">
+    Upload a File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handle-javascript-pop-ups" class="md-nav__link">
+    Handle JavaScript Pop-ups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-between-browser-windows-or-tabs" class="md-nav__link">
+    Switch Between Browser Windows or Tabs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-history" class="md-nav__link">
+    Navigation History
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handle-ssl-certificate-error-chromedriver" class="md-nav__link">
+    Handle SSL Certificate Error ChromeDriver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scroll-focus-to-control" class="md-nav__link">
+    Scroll Focus to Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus-on-a-control" class="md-nav__link">
+    Focus on a Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-http-proxy-chromedriver" class="md-nav__link">
+    Set HTTP Proxy ChromeDriver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-http-proxy-with-authentication-chromedriver" class="md-nav__link">
+    Set HTTP Proxy with Authentication ChromeDriver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-chromedriver-with-an-unpacked-extension" class="md-nav__link">
+    Start ChromeDriver with an Unpacked Extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-chromedriver-with-an-packed-extension" class="md-nav__link">
+    Start ChromeDriver with an Packed Extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assert-a-button-enabled-or-disabled" class="md-nav__link">
+    Assert a Button Enabled or Disabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-file-downloaded-chromedriver" class="md-nav__link">
+    Verify File Downloaded ChromeDriver
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ce_seleniumbase_python/" class="md-nav__link">
+        SeleniumBase Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initialize" class="md-nav__link">
+    Initialize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locators" class="md-nav__link">
+    Locators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-elements-operations" class="md-nav__link">
+    Basic Elements Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-element-operations" class="md-nav__link">
+    Advanced Element Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-browser-operations" class="md-nav__link">
+    Basic Browser Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-browser-operations" class="md-nav__link">
+    Advanced Browser Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-browser-configurations" class="md-nav__link">
+    Advanced Browser Configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taking-a-screenshot" class="md-nav__link">
+    Taking a Screenshot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-html-source-of-webelement" class="md-nav__link">
+    Get HTML Source of WebElement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-javascript" class="md-nav__link">
+    Execute JavaScript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-page-load-timeoout" class="md-nav__link">
+    Set Page Load Timeoout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-tests-in-a-headless-browser" class="md-nav__link">
+    Execute Tests in a Headless Browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-an-element-is-visible" class="md-nav__link">
+    Check If an Element Is Visible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-cookies" class="md-nav__link">
+    Manage Cookies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximize-window" class="md-nav__link">
+    Maximize Window
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drag-and-drop" class="md-nav__link">
+    Drag and Drop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-a-file" class="md-nav__link">
+    Upload a File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handle-javascript-pop-ups" class="md-nav__link">
+    Handle JavaScript Pop-ups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-between-browser-windows-or-tabs" class="md-nav__link">
+    Switch Between Browser Windows or Tabs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-history" class="md-nav__link">
+    Navigation History
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handle-ssl-certificate-error-chromedriver" class="md-nav__link">
+    Handle SSL Certificate Error ChromeDriver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scroll-focus-to-control" class="md-nav__link">
+    Scroll Focus to Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus-on-a-control" class="md-nav__link">
+    Focus on a Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-http-proxy-chromedriver" class="md-nav__link">
+    Set HTTP Proxy ChromeDriver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-http-proxy-with-authentication-chromedriver" class="md-nav__link">
+    Set HTTP Proxy with Authentication ChromeDriver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-chromedriver-with-an-unpacked-extension" class="md-nav__link">
+    Start ChromeDriver with an Unpacked Extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-chromedriver-with-an-packed-extension" class="md-nav__link">
+    Start ChromeDriver with an Packed Extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assert-a-button-enabled-or-disabled" class="md-nav__link">
+    Assert a Button Enabled or Disabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-file-downloaded-chromedriver" class="md-nav__link">
+    Verify File Downloaded ChromeDriver
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="selenium-java-example">Selenium-Java Example</h1>
+<h2 id="initialize">Initialize</h2>
+<pre><code class="language-java">Maven: selenium-firefox-driver
+import org.openqa.selenium.firefox.FirefoxDriver;
+WebDriver driver = new FirefoxDriver();
+
+// Maven: selenium-safari-driver
+import org.openqa.selenium.safari.SafariDriver;
+WebDriver driver = new SafariDriver();
+
+// Maven: selenium-chrome-driver
+import org.openqa.selenium.chrome.ChromeDriver;
+WebDriver driver = new ChromeDriver();
+</code></pre>
+<h2 id="locators">Locators</h2>
+<pre><code class="language-java">driver.findElement(By.className(&quot;className&quot;));
+driver.findElement(By.cssSelector(&quot;css&quot;));
+driver.findElement(By.id(&quot;id&quot;));
+driver.findElement(By.linkText(&quot;text&quot;));
+driver.findElement(By.name(&quot;name&quot;));
+driver.findElement(By.partialLinkText(&quot;pText&quot;));
+driver.findElement(By.tagName(&quot;input&quot;));
+driver.findElement(By.xpath(&quot;//*[@id='editor']&quot;));
+// Find multiple elementsList
+&lt;WebElement&gt; anchors = driver.findElements(By.tagName(&quot;a&quot;));
+// Search for an element inside anotherWebElement 
+div = driver.findElement(By.tagName(&quot;div&quot;)).findElement(By.tagName(&quot;a&quot;));
+</code></pre>
+<h2 id="basic-elements-operations">Basic Elements Operations</h2>
+<pre><code class="language-java">WebElement element = driver.findElement(By.id(&quot;id&quot;));
+element.click();
+element.sendKeys(&quot;someText&quot;);
+element.clear();
+element.submit();
+String innerText = element.getText();
+boolean isEnabled = element.isEnabled();
+boolean isDisplayed = element.isDisplayed();
+boolean isSelected = element.isSelected();
+WebElement element = driver.findElement(By.id(&quot;id&quot;));
+Select select = new Select(element);
+select.selectByIndex(1);
+select.selectByVisibleText(&quot;Ford&quot;);
+select.selectByValue(&quot;ford&quot;);
+select.deselectAll();
+select.deselectByIndex(1);
+select.deselectByVisibleText(&quot;Ford&quot;);
+select.deselectByValue(&quot;ford&quot;);
+List&lt;WebElement&gt; allSelected = select.getAllSelectedOptions();
+boolean isMultipleSelect = select.isMultiple();
+</code></pre>
+<h2 id="advanced-element-operations">Advanced Element Operations</h2>
+<pre><code class="language-java">// Drag and Drop
+WebElement element = driver.FindElement(By.xpath(&quot;//[@id='project']/p[1]/div/div[2]&quot;));
+Actions move = new Actions(driver);
+move.dragAndDropBy(element, 30, 0).build().perform();
+// How to check if an element is visible
+Assert.assertTrue(driver.findElement(By.xpath(&quot;//[@id='tve_editor']/div&quot;)).isDisplayed());
+// Upload a file
+WebElement element = driver.findElement(By.id(&quot;RadUpload1file0&quot;));
+String filePath = &quot;D:WebDriver.Series.TestsWebDriver.xml&quot;;
+element.sendKeys(filePath);
+// Scroll focus to control
+WebElement link =driver.findElement(By.partialLinkText(&quot;Previous post&quot;));
+String js = String.format(&quot;window.scroll(0, %d);&quot;,link.getLocation().getY());
+((JavascriptExecutor)driver).executeScript(js);link.click();
+// Taking an element screenshot
+WebElement element =driver.findElement(By.xpath(&quot;//[@id='tve_editor']/div&quot;));
+File screenshotFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+BufferedImage fullImg = ImageIO.read(screenshotFile);
+Point point = element.getLocation();
+int elementWidth = element.getSize().getWidth();
+int elementHeight = element.getSize().getHeight();
+BufferedImage eleScreenshot = fullImg.getSubimage(point.getX(), point.getY(), elementWidth, elementHeight);
+ImageIO.write(eleScreenshot, &quot;png&quot;, screenshotFile);
+String tempDir = getProperty(&quot;java.io.tmpdir&quot;);
+File destFile = new File(Paths.get(tempDir, fileName + &quot;.png&quot;).toString());
+FileUtils.getFileUtils().copyFile(screenshotFile, destFile);
+// Focus on a control
+WebElement link =driver.findElement(By.partialLinkText(&quot;Previous post&quot;));
+Actions action = new Actions(driver);
+action.moveToElement(link).build().perform();
+// Wait for visibility of an element
+WebDriverWait wait = new WebDriverWait(driver, 30);
+wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(&quot;//[@id='tve_editor']/div[2]/div[2]/div/div&quot;)));
+</code></pre>
+<h2 id="basic-browser-operations">Basic Browser Operations</h2>
+<pre><code class="language-java">// Navigate to a page
+driver.navigate().to(&quot;http://google.com&quot;);
+// Get the title of the page
+String title = driver.getTitle();
+// Get the current URL
+String url = driver.getCurrentUrl();
+// Get the current page HTML source
+String html = driver.getPageSource();
+</code></pre>
+<h2 id="advanced-browser-operations">Advanced Browser Operations</h2>
+<pre><code class="language-java">// Handle JavaScript pop-ups
+Alert alert = driver.switchTo().alert();
+alert.accept();
+alert.dismiss();
+// Switch between browser windows or tabs
+Set&lt;String&gt; windowHandles = driver.getWindowHandles();
+String firstTab = (String)windowHandles.toArray()[1];
+String lastTab = (String)windowHandles.toArray()[2];
+driver.switchTo().window(lastTab);
+// Navigation history
+driver.navigate().back();
+driver.navigate().refresh();
+driver.navigate().forward();
+// Maximize windowdriver.manage().window().maximize();
+// Add a new cookieCookie newCookie = new Cookie(&quot;customName&quot;, &quot;customValue&quot;);
+driver.manage().addCookie(newCookie);
+// Get all cookies
+Set&lt;Cookie&gt; cookies = driver.manage().getCookies();
+// Delete a cookie by name
+driver.manage().deleteCookieNamed(&quot;CookieName&quot;);
+// Delete all cookies
+driver.manage().deleteAllCookies();
+//Taking a full-screen screenshot
+File srceenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+String tempDir = getProperty(&quot;java.io.tmpdir&quot;);
+File destFile = new File(Paths.get(tempDir, fileName + &quot;.png&quot;).toString());
+FileUtils.getFileUtils().copyFile(srceenshotFile, destFile);
+// Wait until a page is fully loaded via JavaScript
+WebDriverWait wait = new WebDriverWait(driver, 30);
+wait.until(x -&gt; {((String)((JavascriptExecutor)driver).executeScript(&quot;return document.readyState&quot;)).equals(&quot;complete&quot;);});
+// Switch to frames
+driver.switchTo().frame(1);driver.switchTo().frame(&quot;frameName&quot;);
+WebElement element = driver.findElement(By.id(&quot;id&quot;));
+driver.switchTo().frame(element);
+// Switch to the default document
+driver.switchTo().defaultContent();
+</code></pre>
+<h2 id="advanced-browser-configurations">Advanced Browser Configurations</h2>
+<pre><code class="language-java">// Set a HTTP proxy Chromevar proxy = new Proxy();
+proxy.setProxyType(Proxy.ProxyType.MANUAL);
+proxy.setAutodetect(false);
+proxy.setSslProxy(&quot;127.0.0.1:3239&quot;);
+ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.setProxy(proxy);
+driver = new ChromeDriver(chromeOptions);
+// Accept all certificates 
+ChromeChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.addArguments(&quot;--ignore-certificate-errors&quot;);
+driver = new ChromeDriver(chromeOptions);
+// Set Chrome options
+ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.addArguments(&quot;user-data-dir=C:PathToUser Data&quot;);
+driver = new ChromeDriver(chromeOptions);
+// Set the default page load timeout
+driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+// Start Chrome with an unpacked extension
+ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.addArguments(&quot;load-extension=/path/to/extension&quot;);
+driver = new ChromeDriver(chromeOptions);
+// Start Chrome with a packed extension
+ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.addExtensions(new File(&quot;local/path/to/extension.crx&quot;));
+driver = new ChromeDriver(chromeOptions);
+</code></pre>
+<h2 id="taking-a-screenshot">Taking a Screenshot</h2>
+<p>You can use the following method to take a full-screen screenshot of the browser.</p>
+<pre><code class="language-java">public void takeFullScreenshot(String fileName) throws Exception {
+ File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+ String tempDir = getProperty(&quot;java.io.tmpdir&quot;);
+ File destFile = new File(Paths.get(tempDir, fileName + &quot;.png&quot;).toString());
+ FileUtils.getFileUtils().copyFile(srcFile, destFile);
+}
+</code></pre>
+<p>Sometimes you may need to take a screenshot of a single element.</p>
+<pre><code class="language-java">public void takeScreenshotOfElement(WebElement element, String fileName) throws Exception {
+ File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+ BufferedImage fullImg = ImageIO.read(screenshotFile);
+ Point point = element.getLocation();
+ int elementWidth = element.getSize().getWidth();
+ int elementHeight = element.getSize().getHeight();
+ BufferedImage eleScreenshot = fullImg.getSubimage(point.getX(), point.getY(), elementWidth, elementHeight);
+ ImageIO.write(eleScreenshot, &quot;png&quot;, screenshotFile);
+ String tempDir = getProperty(&quot;java.io.tmpdir&quot;);
+ File destFile = new File(Paths.get(tempDir, fileName + &quot;.png&quot;).toString());
+ FileUtils.getFileUtils().copyFile(screenshotFile, destFile);
+}
+</code></pre>
+<p>First, we make a full-screen screenshot then we locate the specified element by its location and size attributes. After that, the found rectangle chunk is saved as a BufferedImage.</p>
+<p>Here is how you use both methods in tests:</p>
+<pre><code class="language-java">@Test
+public void takeFullScreenshot_test() throws Exception {
+ driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
+ takeFullScreenshot(&quot;testImage&quot;);
+}
+@Test
+public void takeElementScreenshot_test() throws Exception {
+ driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
+ var element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;)));
+ takeScreenshotOfElement(element, &quot;testElementImage&quot;);
+}
+</code></pre>
+<h2 id="get-html-source-of-webelement">Get HTML Source of WebElement</h2>
+<p>You can use the getAttribute method of the WebElement interface to get the inner HTML of a specific element.</p>
+<pre><code class="language-java">@Test
+public void getHtmlSourceOfWebElement() {
+ driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
+ var element = wait.until(ExpectedConditions.visibilityOfElementLocated(
+ By.xpath(&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;)));
+ String sourceHtml = element.getAttribute(&quot;innerHTML&quot;);
+ System.out.println(sourceHtml);
+}
+</code></pre>
+<h2 id="execute-javascript">Execute JavaScript</h2>
+<p>You can use the interface JavaScriptExecutor to execute JavaScript through WebDriver.</p>
+<pre><code class="language-java">@Test
+public void executeJavaScript() {
+ driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
+ JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+ String title = (String) javascriptExecutor.executeScript(&quot;return document.title&quot;);
+ System.out.println(title);
+}
+</code></pre>
+<p>This test will take the current window's title via JavaScript and print it to the output window.</p>
+<h2 id="set-page-load-timeoout">Set Page Load Timeoout</h2>
+<p>There are at least three methods that you can use for the job.</p>
+<p>First, you can set the default driver's page load timeout through the WebDriver's options class.</p>
+<pre><code class="language-java">driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+</code></pre>
+<p>You can wait until the page is completely loaded via JavaScript.</p>
+<pre><code class="language-java">private void waitUntilLoaded() {
+ wait.until(x -&gt;
+ {
+ JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+ String isReady = (String) javascriptExecutor.executeScript(&quot;return document.readyState&quot;);
+ return isReady.equals(&quot;complete&quot;);
+ });
+}
+</code></pre>
+<p>Your third option is to wait for a specific element(s) to be visible on the page.</p>
+<pre><code class="language-java">wait.until(ExpectedConditions.visibilityOfAllElements(
+ driver.findElements(By.xpath(&quot;//*[@id='tve_editor']/div[2]/div[2]/div/div&quot;))));
+</code></pre>
+<h2 id="execute-tests-in-a-headless-browser">Execute Tests in a Headless Browser</h2>
+<p>You can use the ChromeOptions class and set a few arguments to set up Chrome to run without its UI in the so-called headless mode. You can do the same for Firefox and Edge Chromium.</p>
+<pre><code class="language-java">ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.addArguments(
+&quot;--headless&quot;, 
+&quot;--disable-gpu&quot;, 
+&quot;--window-size=1920,1200&quot;,
+&quot;--ignore-certificate-errors&quot;);
+driver = new ChromeDriver(chromeOptions);
+</code></pre>
+<h2 id="check-if-an-element-is-visible">Check If an Element Is Visible</h2>
+<p>You can use the isDisplayed method of the WebElement interface.</p>
+<pre><code class="language-java">@Test
+public void checkIfElementIsVisible() {
+ driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
+ var element = driver.findElement(By.xpath(&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;);
+ Assert.assertTrue(element).isDisplayed());
+}
+</code></pre>
+<h2 id="manage-cookies">Manage Cookies</h2>
+<p>Before you can work with the cookies of a site, you need to navigate to some of its pages.</p>
+<pre><code class="language-java">@Test
+public void manageCookies() {
+ driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
+ // get all cookies
+ var cookies = driver.manage().getCookies();
+ for (Cookie cookie:cookies) {
+ System.out.println(cookie.getName());
+ }
+ // get a cookie by name
+ var fbPixelCookie = driver.manage().getCookieNamed(&quot;_fbp&quot;);
+ // create a new cookie by name
+ Cookie newCookie = new Cookie(&quot;customName&quot;, &quot;customValue&quot;);
+ driver.manage().addCookie(newCookie);
+ // delete a cookie
+ driver.manage().deleteCookie(fbPixelCookie);
+ // delete a cookie by name
+ driver.manage().deleteCookieNamed(&quot;customName&quot;);
+ // delete all cookies
+ driver.manage().deleteAllCookies();
+}
+</code></pre>
+<h2 id="maximize-window">Maximize Window</h2>
+<p>Use the maximize method of the Window interface.</p>
+<pre><code class="language-java">driver.manage().window().maximize();
+</code></pre>
+<h2 id="drag-and-drop">Drag and Drop</h2>
+<p>You can use the special Actions WebDriver class to perform complex UI interactions. Through its method dragAndDropBy, you can drag and drop. You only need to set the desired X and Y offsets.</p>
+<pre><code class="language-java">@Test
+public void dragAndDrop() {
+ driver.navigate().to(&quot;http://loopj.com/jquery-simple-slider/&quot;);
+ var element = driver.findElement(By.xpath(&quot;//*[@id='project']/p[1]/div/div[2]&quot;));
+ Actions action = new Actions(driver);
+ action.dragAndDropBy(element, 30, 0).build().perform();
+}
+</code></pre>
+<h2 id="upload-a-file">Upload a File</h2>
+<p>It is a straightforward task to upload a file using WebDriver. You need to locate the file element and use the WebElement's sendKeys method to set the path to your file.</p>
+<pre><code class="language-java">@Test
+public void fileUpload() throws IOException {
+ driver.navigate().to(
+ &quot;https://demos.telerik.com/aspnet-ajax/ajaxpanel/application-scenarios/file-upload/defaultcs.aspx&quot;);
+ var element = driver.findElement(By.id(&quot;ctl00_ContentPlaceholder1_RadUpload1file0&quot;));
+ String filePath = Paths.get(getProperty(&quot;java.io.tmpdir&quot;), &quot;debugWebDriver.xml&quot;).toString();
+ File destFile = new File(filePath);
+ destFile.createNewFile();
+ element.sendKeys(filePath);
+}
+</code></pre>
+<h2 id="handle-javascript-pop-ups">Handle JavaScript Pop-ups</h2>
+<p>You can use the accept and dismiss methods of the Alert interface to handle JavaScript pop-ups. First, you need to use the switchTo method to switch to the alert.</p>
+<pre><code class="language-java">@Test
+public void handleJavaScripPopUps() {
+ driver.navigate().to(&quot;http://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm&quot;);
+ driver.switchTo().frame(&quot;iframeResult&quot;);
+ var button = driver.findElement(By.xpath(&quot;/html/body/button&quot;));
+ button.click();
+ Alert alert = driver.switchTo().alert();
+ if (alert.getText().equals(&quot;Press a button!&quot;)) {
+ alert.accept();
+ }
+ else {
+ alert.dismiss();
+ }
+}
+</code></pre>
+<h2 id="switch-between-browser-windows-or-tabs">Switch Between Browser Windows or Tabs</h2>
+<p>WebDriver drives the browser within a scope of one browser window. However, we can use its switchTo method to change the target window or tab.</p>
+<pre><code class="language-java">@Test
+public void movingBetweenTabs() {
+ driver.navigate().to(&quot;https://www.automatetheplanet.com/&quot;);
+ var firstLink = driver.findElement(By.xpath(&quot;//*[@id='menu-item-11362']/a&quot;));
+ var secondLink = driver.findElement(By.xpath(&quot;//*[@id='menu-item-6']/a&quot;));
+ String selectLinkOpenninNewTab = Keys.chord(Keys.CONTROL,Keys.RETURN);
+ firstLink.sendKeys(selectLinkOpenninNewTab);
+ secondLink.sendKeys(selectLinkOpenninNewTab);
+ Set&lt;String&gt; windows = driver.getWindowHandles();
+ String firstTab = (String)windows.toArray()[1];
+ String lastTab = (String)windows.toArray()[2];
+ driver.switchTo().window(lastTab);
+ Assert.assertEquals(&quot;Resources - Automate The Planet&quot;, driver.getTitle());
+ driver.switchTo().window(firstTab);
+ Assert.assertEquals(&quot;Blog - Automate The Planet&quot;, driver.getTitle());
+}
+</code></pre>
+<p>The getWindowHandles method returns all open browser windows. You can pass the name of the desired tab/window to the window method of the TargetLocator interface (returned by the switchTo method) to change the current target.</p>
+<p>You can also notice that we use one more trick to open the link in a new tab using the Keys.chord method, and then instead of clicking, we use the sendKeys method to perform CTRL + return sequence.</p>
+<h2 id="navigation-history">Navigation History</h2>
+<p>WebDriver Navigation interface contains handy methods for going forward and backward. Also, you can refresh the current page.</p>
+<pre><code class="language-java">@Test
+public void navigationHistory() {
+ driver.navigate().to(&quot;https://www.codeproject.com/Articles/1078541/Advanced-WebDriver-Tips-and-Tricks-Part&quot;);
+ driver.navigate().to(&quot;http://www.codeproject.com/Articles/1017816/Speed-up-Selenium-Tests-through-RAM-Facts-and-Myth&quot;);
+ driver.navigate().back();
+ Assert.assertEquals(&quot;10 Advanced WebDriver Tips and Tricks - Part 1 - CodeProject&quot;, driver.getTitle());
+ driver.navigate().refresh();
+ Assert.assertEquals(&quot;10 Advanced WebDriver Tips and Tricks - Part 1 - CodeProject&quot;, driver.getTitle());
+ driver.navigate().forward();
+ Assert.assertEquals(&quot;Speed up Selenium Tests through RAM Facts and Myths - CodeProject&quot;, driver.getTitle());
+}
+</code></pre>
+<h2 id="handle-ssl-certificate-error-chromedriver">Handle SSL Certificate Error ChromeDriver</h2>
+<pre><code class="language-java">ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.addArguments(&quot;--ignore-certificate-errors&quot;);
+driver = new ChromeDriver(chromeOptions);
+</code></pre>
+<h2 id="scroll-focus-to-control">Scroll Focus to Control</h2>
+<p>There isn't a built-in mechanism in WebDriver to scroll focus to a control. However, you can use the JavaScript's method window.scroll. You only need to pass the getY location of the desired element.</p>
+<pre><code class="language-java">@Test
+public void scrollFocusToControl() {
+ driver.navigate().to(&quot;http://automatetheplanet.com/&quot;);
+ var ourMissionLink = driver.findElement(By.xpath(&quot;//*[@id=&quot;panel-6435-0-0-4&quot;]/div&quot;));
+ String jsToBeExecuted = String.format(&quot;window.scroll(0, {0});&quot;, ourMissionLink.getLocation().getY());
+ JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+ javascriptExecutor.executeScript(jsToBeExecuted);
+}
+</code></pre>
+<h2 id="focus-on-a-control">Focus on a Control</h2>
+<p>To do the trick, we use again the special Actions class, which has a method called moveToElement.</p>
+<pre><code class="language-java">@Test
+public void focusOnControl() {
+ driver.navigate().to(&quot;http://automatetheplanet.com/&quot;);
+ waitUntilLoaded();
+ var ourMissionLink = driver.findElement(By.xpath(&quot;//*[@id=&quot;panel-6435-0-0-4&quot;]/div&quot;));
+ Actions action = new Actions(driver);
+ action.moveToElement(ourMissionLink).build().perform();
+}
+</code></pre>
+<h2 id="set-http-proxy-chromedriver">Set HTTP Proxy ChromeDriver</h2>
+<p>The configuration of a proxy for ChromeDriver is a little bit different from the one for FirefoxDriver. You need to use the special Proxy class in combination with ChromeOptions.</p>
+<pre><code class="language-java">var proxy = new Proxy();
+proxy.setProxyType(Proxy.ProxyType.MANUAL);
+proxy.setAutodetect(false);
+proxy.setSslProxy(&quot;127.0.0.1:3239&quot;);
+ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.setProxy(proxy);
+driver = new ChromeDriver(chromeOptions);
+</code></pre>
+<h2 id="set-http-proxy-with-authentication-chromedriver">Set HTTP Proxy with Authentication ChromeDriver</h2>
+<p>The only difference from the previous example is the configuration of the --proxy-server argument.</p>
+<pre><code class="language-java">var proxy = new Proxy();
+proxy.setProxyType(Proxy.ProxyType.MANUAL);
+proxy.setAutodetect(false);
+proxy.setSslProxy(&quot;127.0.0.1:3239&quot;);
+ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.setProxy(proxy);
+chromeOptions.addArguments(&quot;--proxy-server=http://user:password@127.0.0.1:3239&quot;);
+driver = new ChromeDriver(chromeOptions);
+</code></pre>
+<h2 id="start-chromedriver-with-an-unpacked-extension">Start ChromeDriver with an Unpacked Extension</h2>
+<p>Chrome extensions can be either packed or unpacked. Packed extensions are a single file with a .crx extension. Unpacked Extensions are a directory containing the extension, including a manifest.json file. To load an unpacked extension you need to set the load-extension argument.</p>
+<pre><code class="language-java">chromeOptions.addArguments(&quot;load-extension=/pathTo/extension&quot;);
+driver = new ChromeDriver(chromeOptions);
+</code></pre>
+<h2 id="start-chromedriver-with-an-packed-extension">Start ChromeDriver with an Packed Extension</h2>
+<p>Instead of setting the load-extension argument, you need to use the addExtension method of the ChromeOptions class to set the path to your packed extension.</p>
+<pre><code class="language-java">ChromeOptions chromeOptions = new ChromeOptions();
+chromeOptions.addExtensions(new File(&quot;local/path/to/extension.crx&quot;));
+driver = new ChromeDriver(chromeOptions);
+</code></pre>
+<h2 id="assert-a-button-enabled-or-disabled">Assert a Button Enabled or Disabled</h2>
+<p>You can check if an element is disabled through the isEnabled method of the WebElement interface.</p>
+<pre><code class="language-java">@Test
+public void assertButtonEnabledDisabled() {
+ driver.navigate().to(&quot;http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled&quot;);
+ driver.switchTo().frame(&quot;iframeResult&quot;);
+ var button = driver.findElement(By.xpath(&quot;/html/body/button&quot;));
+ Assert.assertFalse(button.isEnabled());
+}
+</code></pre>
+<h2 id="verify-file-downloaded-chromedriver">Verify File Downloaded ChromeDriver</h2>
+<p>To change the default download directory of the current Chrome instance set the download.default_directory argument. When we initiate the file download, we use the WebDriverWait to wait until the file exists on the file system. Finally, we assert the file size. The whole code is surrounded with a try-finally block. In the finally we delete the downloaded file so that our test to be consistent every time.</p>
+<pre><code class="language-java">String downloadFilepath = &quot;c:temp&quot;;
+HashMap&lt;String, Object&gt; chromePrefs = new HashMap&lt;&gt;();
+chromePrefs.put(&quot;profile.default_content_settings.popups&quot;, 0);
+chromePrefs.put(&quot;download.default_directory&quot;, downloadFilepath);
+chromeOptions.setExperimentalOption(&quot;prefs&quot;, chromePrefs);
+chromeOptions.addArguments(&quot;--test-type&quot;);
+chromeOptions.addArguments(&quot;start-maximized&quot;, &quot;disable-popup-blocking&quot;);
+
+String downloadFilepath = &quot;c:temp&quot;;
+HashMap&lt;String, Object&gt; chromePrefs = new HashMap&lt;&gt;();
+chromePrefs.put(&quot;profile.default_content_settings.popups&quot;, 0);
+chromePrefs.put(&quot;download.default_directory&quot;, downloadFilepath);
+chromeOptions.setExperimentalOption(&quot;prefs&quot;, chromePrefs);
+chromeOptions.addArguments(&quot;--test-type&quot;);
+chromeOptions.addArguments(&quot;start-maximized&quot;, &quot;disable-popup-blocking&quot;);
+
+@Test
+public void VerifyFileDownloadChrome() throws IOException {
+ var expectedFilePath = Paths.get(&quot;c:tempTesting_Framework_2015_3_1314_2_Free.exe&quot;);
+ try
+ {
+ driver.navigate().to(&quot;https://www.telerik.com/download-trial-file/v2/telerik-testing-framework&quot;);
+ wait.until(x -&gt; Files.exists(expectedFilePath));
+ long bytes = Files.size(expectedFilePath);
+ Assert.assertEquals(4326192, bytes);
+ }
+ finally
+ {
+ if (Files.exists(expectedFilePath))
+ {
+ Files.delete(expectedFilePath);
+ }
+ }
+}
+</code></pre>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../../framework_setup/fs_selenium_python_seleniumbase/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Selenium (Python-SeleniumBase)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Selenium (Python-SeleniumBase)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ce_seleniumbase_python/" class="md-footer__link md-footer__link--next" aria-label="Next: SeleniumBase Python" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SeleniumBase Python
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "search.tabs.link"], "search": "../../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>

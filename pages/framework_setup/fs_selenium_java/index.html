@@ -1,0 +1,1168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pages.gitlab.io/furmandocs/pages/framework_setup/fs_selenium_java/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+    
+    
+      
+        <title>Selenium (Java) - Furman QA Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#java-selenium-cucumber-testprojectio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://pages.gitlab.io/furmandocs/" title="Furman QA Docs" class="md-header__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furman QA Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Selenium (Java)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://pages.gitlab.io/furmandocs/" title="Furman QA Docs" class="md-nav__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    Furman QA Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          QA Box
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QA Box" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          QA Box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_code_review/" class="md-nav__link">
+        Code Review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_skills/" class="md-nav__link">
+        Automation Skills
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_coding_guidelines/" class="md-nav__link">
+        Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_coding_guidelines_advanced/" class="md-nav__link">
+        Advanced Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_good_practice/" class="md-nav__link">
+        Automation Good Practice
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_terms/" class="md-nav__link">
+        QA Terms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_expert/" class="md-nav__link">
+        QA Expert
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Framework Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Framework Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Framework Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fs_cypress/" class="md-nav__link">
+        Cypress (Javascript)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Selenium (Java)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Selenium (Java)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qa-automation-framework-setup" class="md-nav__link">
+    QA Automation Framework Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="QA Automation Framework Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-task" class="md-nav__link">
+    Main Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-limitations" class="md-nav__link">
+    Selenium Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-setup-jdk" class="md-nav__link">
+    01. Setup JDK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-setup-maven" class="md-nav__link">
+    02. Setup MAVEN
+  </a>
+  
+    <nav class="md-nav" aria-label="02. Setup MAVEN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-environment-variables-for-maven" class="md-nav__link">
+    Setup Environment variables for Maven
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-setup-nodejs" class="md-nav__link">
+    03. Setup NodeJS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-download-drivers" class="md-nav__link">
+    04. Download Drivers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-create-working-directory" class="md-nav__link">
+    05. Create Working Directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-clone-project" class="md-nav__link">
+    06. Clone Project
+  </a>
+  
+    <nav class="md-nav" aria-label="06. Clone Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional" class="md-nav__link">
+    Optional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-brief-details-about-the-files-and-folders" class="md-nav__link">
+    07. Brief Details About The Files And Folders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08-dependencies-list-pomxml" class="md-nav__link">
+    08. Dependencies List (pom.xml)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09-basic-actions" class="md-nav__link">
+    09. Basic Actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-useful-links" class="md-nav__link">
+    10. Useful Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fs_selenium_python/" class="md-nav__link">
+        Selenium (Python)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fs_selenium_python_seleniumbase/" class="md-nav__link">
+        Selenium (Python-SeleniumBase)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Code Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Code Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_examples/selenium/ce_selenium_java/" class="md-nav__link">
+        Selenium Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_examples/selenium/ce_seleniumbase_python/" class="md-nav__link">
+        SeleniumBase Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qa-automation-framework-setup" class="md-nav__link">
+    QA Automation Framework Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="QA Automation Framework Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-task" class="md-nav__link">
+    Main Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selenium-limitations" class="md-nav__link">
+    Selenium Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-setup-jdk" class="md-nav__link">
+    01. Setup JDK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-setup-maven" class="md-nav__link">
+    02. Setup MAVEN
+  </a>
+  
+    <nav class="md-nav" aria-label="02. Setup MAVEN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-environment-variables-for-maven" class="md-nav__link">
+    Setup Environment variables for Maven
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-setup-nodejs" class="md-nav__link">
+    03. Setup NodeJS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-download-drivers" class="md-nav__link">
+    04. Download Drivers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-create-working-directory" class="md-nav__link">
+    05. Create Working Directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-clone-project" class="md-nav__link">
+    06. Clone Project
+  </a>
+  
+    <nav class="md-nav" aria-label="06. Clone Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional" class="md-nav__link">
+    Optional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-brief-details-about-the-files-and-folders" class="md-nav__link">
+    07. Brief Details About The Files And Folders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08-dependencies-list-pomxml" class="md-nav__link">
+    08. Dependencies List (pom.xml)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09-basic-actions" class="md-nav__link">
+    09. Basic Actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-useful-links" class="md-nav__link">
+    10. Useful Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="java-selenium-cucumber-testprojectio">Java + Selenium + Cucumber + TestProjectIO</h1>
+<h2 id="qa-automation-framework-setup">QA Automation Framework Setup</h2>
+<p>This document is created to enable new employees to get the basic, starting knowledge on how web automation testing works.</p>
+<h3 id="main-task">Main Task</h3>
+<p>Ensure the quality of the products that your team puts in in the hands of customers by automatig web application end users processes.</p>
+<h3 id="selenium-limitations">Selenium Limitations</h3>
+<ul>
+<li>No built-in command for automatic generation of test scripts</li>
+<li>Handling page load or element load is difficult</li>
+<li>Creating test cases is time-consuming</li>
+<li>Difficult to set up test environment as compared to Cypress</li>
+</ul>
+<h3 id="pre-requisites">Pre-Requisites</h3>
+<ul>
+<li>Install <a href="https://git-scm.com/">GIT</a> (Version Control System)</li>
+<li>Make sure you have access to <a href="https://git.nosolutions.rs/">company git repository</a></li>
+<li>Make sure you have ssh access to your account and key is already added for account.</li>
+<li>Must have account on Test Project cloud platform: <a href="https://testproject.io/">TestProjectIO</a></li>
+<li>Run TestProject Agent on your PC (If using <a href="https://docs.testproject.io/testproject-sdk/opensdk-v2/java-sdk">TestProjectIO SDK</a> instead of chromedriver)</li>
+<li>Install <a href="https://www.jetbrains.com/idea/download/#section=windows">IntelliJ IDEA</a> (Integrated Development Environment)</li>
+</ul>
+<h2 id="01-setup-jdk">01. Setup JDK</h2>
+<ul>
+<li>Install <a href="https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html">JDK 11</a> for Windows</li>
+<li>Setup environment variables for Java JDK within your PC<ul>
+<li>Navigate to System Properties <strong>(hit: WinKey, type: env, hit: ENTER):</strong></li>
+<li>Navigate to Environment Variables: <strong><code>System Properties\Advanced\Environment Variables</code></strong><ul>
+<li>Name: <strong><code>JAVA_HOME</code></strong></li>
+<li>Destination <strong><code>C:\Program Files\Java\jdk-11.0.12</code></strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="02-setup-maven">02. Setup MAVEN</h2>
+<ul>
+<li>Download <a href="https://maven.apache.org/download.cgi">Maven</a> (.zip)</li>
+<li>Create Maven destination folder<ul>
+<li>Navigate to <strong><code>"C:\Program Files\"</code></strong></li>
+<li>Create folder <strong><code>apache-maven-3.6.3</code></strong></li>
+<li>Copy .zip file previously downloaded</li>
+<li>Unzip that file within <strong><code>C:\Program Files\apache-maven-3.6.3\</code></strong> folder</li>
+</ul>
+</li>
+</ul>
+<h3 id="setup-environment-variables-for-maven">Setup Environment variables for Maven</h3>
+<ul>
+<li>Navigate to System Properties <strong>(hit: WinKey, type: env, hit: ENTER):</strong></li>
+<li>Navigate to: <strong><code>System Properties\Advanced\Environment Variables</code></strong><ul>
+<li>Within the root set environment variable name and destination:</li>
+<li>Name: <strong><code>%MAVEN_HOME%</code></strong></li>
+<li>Destination: <strong><code>C:\Program Files\apache-maven-3.6.3</code></strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="03-setup-nodejs">03. Setup NodeJS</h2>
+<ul>
+<li>Download <a href="https://nodejs.org/en/blog/release/v14.17.6/">NodeJS 14.17.6</a></li>
+<li>Navigate to System Properties <strong>(hit: WinKey, type: env, hit: ENTER):</strong></li>
+<li>Navigate to: <strong><code>System Properties\Advanced\Environment Variables\Path</code></strong><ul>
+<li>Within the root set environment variable name and destination:</li>
+<li>Name: <strong><code>%JAVA_HOME%\bin</code></strong></li>
+<li>Destination: <strong><code>%MAVEN_HOME%\bin</code></strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="04-download-drivers">04. Download Drivers</h2>
+<ul>
+<li>Download <a href="https://chromedriver.chromium.org/downloads">Chromedriver</a></li>
+<li>Download <a href="https://www.selenium.dev/downloads/">Selenium</a></li>
+</ul>
+<h2 id="05-create-working-directory">05. Create Working Directory</h2>
+<ul>
+<li>Open <strong>Command Promt</strong> or <strong>Terminal</strong></li>
+<li>Navigate to <code>Documents</code> folder, type <strong><code>cd Documents</code></strong> (Or type: <strong>cd Doc</strong> + hit: <strong>Tab</strong>, hit: <strong>Enter</strong>)</li>
+<li>Within <strong><code>Documents</code></strong> folder type <strong><code>mkdir TestingProjects</code></strong> (Folder that hold all of your projects)</li>
+<li>Within <strong><code>TestingProjects</code></strong> folder type <strong><code>mkdir SeleniumProject</code></strong> (This is your Working directory)</li>
+</ul>
+<h2 id="06-clone-project">06. Clone Project</h2>
+<ul>
+<li>Open <strong>Command Promt</strong> or <strong>Terminal</strong></li>
+<li>Navigate to <strong><code>Documents/TestingProjects/SeleniumProject</code></strong> folder</li>
+<li>Clone project repository: <strong><code>git clone https://git.nosolutions.rs/vladan.furman/onboarding-selenium.git</code></strong></li>
+<li>Open project with <strong>IntelliJ Idea</strong></li>
+<li>Run <strong>first test</strong> with Maven</li>
+</ul>
+<h3 id="optional">Optional</h3>
+<ul>
+<li>Download and install <a href="https://testproject.io/">TestProjectIO</a></li>
+<li>Run TestProjectIO Agent</li>
+<li>Setup <a href="https://www.youtube.com/watch?v=PuwS0FiF9to&amp;list=PLGLlPuoTA3DURLLEpkJJmN7wXgGztfIo3&amp;index=5&amp;t=1068s&amp;ab_channel=UltimateQA">TestProjectIO Java SDK</a></li>
+</ul>
+<h2 id="07-brief-details-about-the-files-and-folders">07. Brief Details About The Files And Folders</h2>
+<ul>
+<li><strong>project_name/sauce-demo (project root folder)</strong><ul>
+<li><strong>Resources</strong> (This folder contains drivers etc chromedriver, geckodriver...)</li>
+<li><strong>src/main/java/com.bwl/</strong> (package folder)<ul>
+<li><strong>BaseClass.java</strong> (setDriver, driverQuit)</li>
+<li><strong>LoginPage.java</strong> (waitForLogoPresence, clickOnLoginButton)</li>
+</ul>
+</li>
+<li><strong>test/java/com.bwl/</strong> (package folder)<ul>
+<li><strong>StepDefinitions/</strong> (package folder)</li>
+<li><strong>Initialize.java</strong> (Before - setDriver, After - driverQuit)</li>
+<li><strong>LoginStepDefinitions.java</strong> (Given, Then, When..)</li>
+<li><strong>TestRunner</strong> (RunWith - CucumberOptions)</li>
+</ul>
+</li>
+<li><strong>test/resources</strong><ul>
+<li><strong>features</strong></li>
+<li><strong>LoginUser.feature</strong> (Cucumber Features and Scenarios: Given, Then, When, Examples)</li>
+<li><strong>cucumber.properties</strong></li>
+</ul>
+</li>
+<li><strong>target</strong> (Cucumber reports...)<ul>
+<li>classes</li>
+<li>cucumber-reports</li>
+<li>generated-sources</li>
+<li>generated-test-sources</li>
+<li>test-classes</li>
+</ul>
+</li>
+<li><strong>pom.xml</strong> (This file contains all dependencies and plugins)</li>
+</ul>
+</li>
+</ul>
+<h2 id="08-dependencies-list-pomxml">08. Dependencies List (pom.xml)</h2>
+<hr />
+<ul>
+<li><strong>build</strong><ul>
+<li><strong>plugins</strong><ul>
+<li><strong>plugin</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>org.apache.maven.plugins</code></li>
+<li>artifactId: <code>maven-surefire-plugin</code></li>
+<li>version: <code>3.0.0-M5</code></li>
+<li>configuration:<ul>
+<li>suiteXmlFile: <code>testng.xml</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>net.masterhought</code></li>
+<li>artifactId: <code>maven-cucumber-reporting</code></li>
+<li>version: <code>5.3.0</code></li>
+</ul>
+<hr />
+<ul>
+<li><strong>dependencies</strong><ul>
+<li><strong>dependency</strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>optional</li>
+<li>groupId: <code>io.testproject</code></li>
+<li>artifactId: <code>java-sdk</code></li>
+<li>version: <code>1.2.3.-RELEASE</code></li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>org.seleniumhq.selenium</code></li>
+<li>artifactId: <code>selenium-java</code></li>
+<li>version: <code>3.141.59</code></li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>org.testng</code></li>
+<li>artifactId: <code>testng</code></li>
+<li>version: <code>7.3.0</code></li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>io.cucumber</code></li>
+<li>artifactId: <code>cucumber-java</code></li>
+<li>version: <code>6.7.0</code></li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>io.cucumber</code></li>
+<li>artifactId: <code>cucumber-testng</code></li>
+<li>version: <code>6.7.0</code></li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>io.cucumber</code></li>
+<li>artifactId: <code>cucumber-core</code></li>
+<li>version: <code>6.7.0</code></li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>org.junit.jupiter</code></li>
+<li>artifactId: <code>junit-jupiter-api</code></li>
+<li>version: <code>5.5.2</code></li>
+</ul>
+<hr />
+<ul>
+<li>groupId: <code>io.cucumber</code></li>
+<li>artifactId: <code>cucumber-junit</code></li>
+<li>version: <code>6.11.0</code></li>
+</ul>
+<hr />
+<ul>
+<li><strong>properties</strong></li>
+</ul>
+<hr />
+<ul>
+<li>maven.compiler.source: <code>11</code></li>
+<li>maven.compiler.target: <code>11</code></li>
+</ul>
+<hr />
+<h2 id="09-basic-actions">09. Basic Actions</h2>
+<ul>
+<li>Instantiate a WebDriver object to drive the browser you want to use in your test</li>
+<li>Navigate to the web page you want to test</li>
+<li>Locate the element of the web page you want to test</li>
+<li>Ensure that the browser is in the correct state to interact with that element</li>
+<li>Perform the action on the element</li>
+<li>Record test results</li>
+<li>Create report and logs</li>
+<li>Quit the test</li>
+</ul>
+<h2 id="10-useful-links">10. Useful Links</h2>
+<ul>
+<li><a href="https://www.selenium.dev/documentation/webdriver/">Selenium Webdriver</a></li>
+<li><a href="https://github.com/nadvolod/selenium-java">Selenium-Java GitHub Link</a></li>
+<li><a href="https://www.youtube.com/watch?v=aIfP8rOx66E&amp;t=1825s&amp;ab_channel=UltimateQA">UltimateQA</a></li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../fs_cypress/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cypress (Javascript)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Cypress (Javascript)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../fs_selenium_python/" class="md-footer__link md-footer__link--next" aria-label="Next: Selenium (Python)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Selenium (Python)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.tabs.link"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1063 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pages.gitlab.io/furmandocs/pages/framework_setup/fs_selenium_python/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+    
+    
+      
+        <title>Selenium (Python) - Furman QA Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-framework-selenium-webdriver-html-report" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://pages.gitlab.io/furmandocs/" title="Furman QA Docs" class="md-header__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furman QA Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Selenium (Python)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://pages.gitlab.io/furmandocs/" title="Furman QA Docs" class="md-nav__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    Furman QA Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          QA Box
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QA Box" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          QA Box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_code_review/" class="md-nav__link">
+        Code Review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_skills/" class="md-nav__link">
+        Automation Skills
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_coding_guidelines/" class="md-nav__link">
+        Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_coding_guidelines_advanced/" class="md-nav__link">
+        Advanced Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_good_practice/" class="md-nav__link">
+        Automation Good Practice
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_terms/" class="md-nav__link">
+        QA Terms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_expert/" class="md-nav__link">
+        QA Expert
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Framework Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Framework Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Framework Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fs_cypress/" class="md-nav__link">
+        Cypress (Javascript)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fs_selenium_java/" class="md-nav__link">
+        Selenium (Java)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Selenium (Python)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Selenium (Python)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qa-automation-framework-setup" class="md-nav__link">
+    QA Automation Framework Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="QA Automation Framework Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-task" class="md-nav__link">
+    Main Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-create-working-directory" class="md-nav__link">
+    01. Create Working Directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-clone-repository" class="md-nav__link">
+    02. Clone Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-setup-virtual-environment" class="md-nav__link">
+    03. Setup Virtual Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-install-dependencies" class="md-nav__link">
+    04. Install Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-install-chromedriver" class="md-nav__link">
+    05. Install ChromeDriver
+  </a>
+  
+    <nav class="md-nav" aria-label="05. Install ChromeDriver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-all-requirements" class="md-nav__link">
+    Install all requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-brief-details-about-the-files-and-folders" class="md-nav__link">
+    06. Brief Details About The Files And Folders
+  </a>
+  
+    <nav class="md-nav" aria-label="06. Brief Details About The Files And Folders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure-tree" class="md-nav__link">
+    Project Structure Tree
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-pytest-commands" class="md-nav__link">
+    07. Pytest Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="07. Pytest Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-specific-testcase" class="md-nav__link">
+    Run specific testcase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-testcase-and-create-html-report-within-reports-folder" class="md-nav__link">
+    Run testcase and create html report within "Reports" folder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08-basic-actions" class="md-nav__link">
+    08. Basic Actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09-useful-links" class="md-nav__link">
+    09. Useful Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fs_selenium_python_seleniumbase/" class="md-nav__link">
+        Selenium (Python-SeleniumBase)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Code Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Code Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_examples/selenium/ce_selenium_java/" class="md-nav__link">
+        Selenium Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_examples/selenium/ce_seleniumbase_python/" class="md-nav__link">
+        SeleniumBase Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qa-automation-framework-setup" class="md-nav__link">
+    QA Automation Framework Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="QA Automation Framework Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-task" class="md-nav__link">
+    Main Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-create-working-directory" class="md-nav__link">
+    01. Create Working Directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-clone-repository" class="md-nav__link">
+    02. Clone Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-setup-virtual-environment" class="md-nav__link">
+    03. Setup Virtual Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-install-dependencies" class="md-nav__link">
+    04. Install Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-install-chromedriver" class="md-nav__link">
+    05. Install ChromeDriver
+  </a>
+  
+    <nav class="md-nav" aria-label="05. Install ChromeDriver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-all-requirements" class="md-nav__link">
+    Install all requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-brief-details-about-the-files-and-folders" class="md-nav__link">
+    06. Brief Details About The Files And Folders
+  </a>
+  
+    <nav class="md-nav" aria-label="06. Brief Details About The Files And Folders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure-tree" class="md-nav__link">
+    Project Structure Tree
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-pytest-commands" class="md-nav__link">
+    07. Pytest Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="07. Pytest Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-specific-testcase" class="md-nav__link">
+    Run specific testcase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-testcase-and-create-html-report-within-reports-folder" class="md-nav__link">
+    Run testcase and create html report within "Reports" folder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08-basic-actions" class="md-nav__link">
+    08. Basic Actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09-useful-links" class="md-nav__link">
+    09. Useful Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="python-framework-selenium-webdriver-html-report">Python Framework - Selenium WebDriver - HTML Report</h1>
+<h2 id="qa-automation-framework-setup">QA Automation Framework Setup</h2>
+<p>This document is created to enable new employees to get the basic, starting knowledge on how web automation testing works.</p>
+<h3 id="main-task">Main Task</h3>
+<p>Ensure the quality of the products that your team puts in in the hands of customers by automatig web application end users processes.</p>
+<h3 id="pre-requisites">Pre-Requisites</h3>
+<ul>
+<li>Make sure you have access to git repo <code>https://git.nosolutions.rs/</code></li>
+<li>Make sure you have ssh access to your account and key is already added for account.</li>
+<li>Install <a href="https://www.jetbrains.com/pycharm/">PyCharm</a></li>
+</ul>
+<h2 id="01-create-working-directory">01. Create Working Directory</h2>
+<ul>
+<li>Open <strong>Command Promt</strong> or <strong>Terminal</strong></li>
+<li>Navigate to <code>Documents</code> folder, type <strong><code>cd Documents</code></strong> (Or type: <strong>cd Doc</strong> + hit: <strong>Tab</strong>, hit: <strong>Enter</strong>)</li>
+<li>Within <strong><code>Documents</code></strong> folder type <strong><code>mkdir TestingProjects</code></strong> (Folder that hold all of your projects)</li>
+<li>Within <strong><code>TestingProjects</code></strong> folder type <strong><code>mkdir PycharmProjects</code></strong> (This is your Working directory)</li>
+</ul>
+<h2 id="02-clone-repository">02. Clone Repository</h2>
+<ul>
+<li>
+<p>Within your terminal navigate to: <code>C:/Users/Username/Documents/TestingProjects/PycharmProjects/</code></p>
+</li>
+<li>
+<p>Clone project: <code>git clone https://git.nosolutions.rs/vladan.furman/selenium_python-onboarding.git</code></p>
+</li>
+<li>
+<p>Open project in PyCharm</p>
+</li>
+</ul>
+<h2 id="03-setup-virtual-environment">03. Setup Virtual Environment</h2>
+<ul>
+<li>
+<p>Open <strong>Command Promt</strong> or <strong>Terminal</strong></p>
+</li>
+<li>
+<p>Type: <code>python -m virtualenv venvs\automations</code></p>
+</li>
+<li>
+<p>Activate the virtualenv</p>
+<ul>
+<li>Type: <code>. .\venvs\automations\bin\activate</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="04-install-dependencies">04. Install Dependencies</h2>
+<pre><code>    selenium==3.14.1
+    requests==2.23.0
+    pytest==6.0.1
+    pytest-html==2.0.1
+    pytest-xdist==2.5.0
+    openpyxl==3.0.9
+    pytest-metadata==1.10.0
+    PyYAML==5.3.1
+    c- lang==4.0.post1
+    urllib3==1.25.10
+    allure-pytest==2.8.40
+    stripe==2.37.2
+    pytz==2020.1
+    pytest-services==2.2.1
+</code></pre>
+<h2 id="05-install-chromedriver">05. Install ChromeDriver</h2>
+<ul>
+<li>
+<p>Make sure your version of Chrome is up-to-date, and install the latest Chromedriver for your version from <a href="https://chromedriver.chromium.org/">ChromeDriver</a></p>
+</li>
+<li>
+<p>Unzip and copy <strong>chromedriver</strong> to
+    <code>C:/Users/username/PycharmProjects/pytestSelenium_project/venv/bin/</code></p>
+</li>
+</ul>
+<h3 id="install-all-requirements">Install all requirements</h3>
+<ul>
+<li>Navigate to: <strong><code>/projects/automations/</code></strong></li>
+<li>Type: <strong><code>pip install -r test-requirements.txt</code></strong></li>
+</ul>
+<h2 id="06-brief-details-about-the-files-and-folders">06. Brief Details About The Files And Folders</h2>
+<h3 id="project-structure-tree">Project Structure Tree</h3>
+<ul>
+<li><strong>pytestSelenium_project (root folder)</strong></li>
+<li><strong>Logs</strong> (Used to store execution log files)</li>
+<li><strong>pageObjects</strong> (This Python Package folder contains page object file which represents the screens of your web app as a series of objects and encapsulates the features represented by a page.)</li>
+<li><strong>Reports</strong> (This folder contains report.html file)</li>
+<li><strong>Screenshot</strong> (Saved screenshot for specific scenario)</li>
+<li><strong>TestData</strong> (.xml files)</li>
+<li><strong>tests</strong> (This Python Package folder contains test_scripts, and conf folder)<ul>
+<li><strong>/conf/config.ini</strong> (This file is common file and contains common fixtures related to test scripts)</li>
+<li><strong>/test_scripts</strong> (This folder contains our actual automation test script "*.py")</li>
+</ul>
+</li>
+<li><strong>utilities</strong> (This Python Package folder contains common utilities functions files)<ul>
+<li><strong>/readProerties.py</strong> (This file contains common utility functions.)</li>
+</ul>
+</li>
+<li><strong>venvs</strong> (This folder contains all dependencies in our virtual environment)</li>
+<li><strong>requirements.txt</strong> (This file represent all dependencies we use) (<strong>pip3 freeze &gt; requirements.txt</strong> to create requirements.txt file)</li>
+</ul>
+<h2 id="07-pytest-commands">07. Pytest Commands</h2>
+<h3 id="run-specific-testcase">Run specific testcase</h3>
+<p><strong><code>pytest -v -s tests/test_scripts/test_login.py</code></strong></p>
+<h3 id="run-testcase-and-create-html-report-within-reports-folder">Run testcase and create html report within "Reports" folder</h3>
+<p><strong><code>pytest -v -s –html=Reports\report.html tests/test_scripts/test_login.py</code></strong></p>
+<h2 id="08-basic-actions">08. Basic Actions</h2>
+<ul>
+<li>Instantiate a WebDriver object to drive the browser you want to use in your test</li>
+<li>Navigate to the web page you want to test</li>
+<li>Locate the element of the web page you want to test</li>
+<li>Ensure that the browser is in the correct state to interact with that element</li>
+<li>Perform the action on the element</li>
+<li>Record test results</li>
+<li>Create report and logs</li>
+<li>Quit the test</li>
+</ul>
+<h2 id="09-useful-links">09. Useful Links</h2>
+<ul>
+<li><a href="https://www.selenium.dev/documentation/webdriver/">Selenium Webdriver</a></li>
+<li><a href="https://www.youtube.com/watch?v=Xjv1sY630Uc&amp;t=189s&amp;ab_channel=TechWithTim">TechWithTim - Python Selenium Tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=57pjD89IFXA&amp;t=1875s&amp;ab_channel=SDET-QAAutomationTechie">SDET - Selenium with Python - Hybrid Framework Design from scratch</a></li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../fs_selenium_java/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Selenium (Java)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Selenium (Java)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../fs_selenium_python_seleniumbase/" class="md-footer__link md-footer__link--next" aria-label="Next: Selenium (Python-SeleniumBase)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Selenium (Python-SeleniumBase)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.tabs.link"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>

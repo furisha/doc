@@ -1,0 +1,1258 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pages.gitlab.io/furmandocs/pages/qa-box/qa_coding_guidelines_advanced/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+    
+    
+      
+        <title>Advanced Coding Guidelines - Furman QA Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qa-box-advanced-coding-guidelines" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://pages.gitlab.io/furmandocs/" title="Furman QA Docs" class="md-header__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furman QA Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Advanced Coding Guidelines
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://pages.gitlab.io/furmandocs/" title="Furman QA Docs" class="md-nav__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    Furman QA Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          QA Box
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QA Box" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          QA Box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_code_review/" class="md-nav__link">
+        Code Review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_skills/" class="md-nav__link">
+        Automation Skills
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_coding_guidelines/" class="md-nav__link">
+        Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Advanced Coding Guidelines
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Advanced Coding Guidelines
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    Purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-naming-conventions" class="md-nav__link">
+    01. Naming Conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-project-organization" class="md-nav__link">
+    02. Project Organization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-coding-standards" class="md-nav__link">
+    03. Coding Standards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-framework-guidelines" class="md-nav__link">
+    04. Framework Guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-about-html-elements" class="md-nav__link">
+    05. About HTML Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-bad-coding-good-coding" class="md-nav__link">
+    06. Bad Coding - Good Coding
+  </a>
+  
+    <nav class="md-nav" aria-label="06. Bad Coding - Good Coding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wait-for-page-to-load" class="md-nav__link">
+    Wait for page to load
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#click-elements" class="md-nav__link">
+    Click elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-keys" class="md-nav__link">
+    Send keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-until-web-element-is-clickable" class="md-nav__link">
+    Wait until web element is clickable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-text" class="md-nav__link">
+    Get text
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-useful-links" class="md-nav__link">
+    07. Useful Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_good_practice/" class="md-nav__link">
+        Automation Good Practice
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_terms/" class="md-nav__link">
+        QA Terms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa_expert/" class="md-nav__link">
+        QA Expert
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Framework Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Framework Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Framework Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework_setup/fs_cypress/" class="md-nav__link">
+        Cypress (Javascript)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework_setup/fs_selenium_java/" class="md-nav__link">
+        Selenium (Java)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework_setup/fs_selenium_python/" class="md-nav__link">
+        Selenium (Python)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework_setup/fs_selenium_python_seleniumbase/" class="md-nav__link">
+        Selenium (Python-SeleniumBase)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Code Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Code Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_examples/selenium/ce_selenium_java/" class="md-nav__link">
+        Selenium Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_examples/selenium/ce_seleniumbase_python/" class="md-nav__link">
+        SeleniumBase Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    Purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-naming-conventions" class="md-nav__link">
+    01. Naming Conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-project-organization" class="md-nav__link">
+    02. Project Organization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-coding-standards" class="md-nav__link">
+    03. Coding Standards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-framework-guidelines" class="md-nav__link">
+    04. Framework Guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-about-html-elements" class="md-nav__link">
+    05. About HTML Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-bad-coding-good-coding" class="md-nav__link">
+    06. Bad Coding - Good Coding
+  </a>
+  
+    <nav class="md-nav" aria-label="06. Bad Coding - Good Coding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wait-for-page-to-load" class="md-nav__link">
+    Wait for page to load
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#click-elements" class="md-nav__link">
+    Click elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-keys" class="md-nav__link">
+    Send keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-until-web-element-is-clickable" class="md-nav__link">
+    Wait until web element is clickable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-text" class="md-nav__link">
+    Get text
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-useful-links" class="md-nav__link">
+    07. Useful Links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="qa-box-advanced-coding-guidelines">[<code>QA Box</code>] Advanced Coding Guidelines</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The purpose of this document is to document and follow Naming conventions and guidelines during coding framework designing for Test Automation project.</p>
+<h2 id="01-naming-conventions">01. Naming Conventions</h2>
+<ul>
+<li>File names should be in lower case and each word separated by <code>_</code>. The name should self explanatory. e.g <code>project_test_login.spec.js</code>, or if using Python <code>project_test_login.py</code></li>
+<li>Data / Document files :  Camelcase and name should self explanatory. e.g <code>Project_Automation_README.do</code>, or <code>Project_Automation_README.md</code></li>
+<li>Class names should follow the UpperCaseCamelCase convention. e.g. class <code>LowLevelLib</code>, or <code>BaseClass</code>, <code>LoginStepDefinitions</code></li>
+<li>Variable names should be in lower case and should be self explanatory e.g <code>single_textbox_question</code>, or <code>standard_user</code></li>
+<li>Function names should start with lowercase word and then Camelcase should be followed. It should be self explanatory e.g. <code>fillQuestionAndAnswer</code>, or <code>clickOnLoginButton</code></li>
+</ul>
+<h2 id="02-project-organization">02. Project Organization</h2>
+<ul>
+<li>Organize your tests - separate and categorize them<ul>
+<li>Create folders to more accurately categorize files</li>
+<li>Split tests by category, e.g. in the 'user' folder put tests for login and registration, and in the 'shopping' folder - tests for the buying process.</li>
+</ul>
+</li>
+<li>Write independent tests<ul>
+<li>You should be able to choose any test or run several tests in any order and still get the same result.</li>
+</ul>
+</li>
+<li>Set base URL<ul>
+<li>Instead of repeating the lines with web addresses in each test, set the base URL in the <code>cypress.json</code> file, or if using Selenium, method <code>setDriver</code> within <code>src\main\java\package_directory\BaseClass</code>.</li>
+</ul>
+</li>
+<li>Run tests, that are crucial at the moment<ul>
+<li>if Cypres user: use <code>cy.only</code> and <code>cy.skip</code>,</li>
+<li>if Python Selenium user: Need to "Debug" script to the desired point that determined previously</li>
+</ul>
+</li>
+<li>Use your own custom commands, and page objects<ul>
+<li>Add your command to the <code>commands.js</code> file</li>
+</ul>
+</li>
+<li>Use the best selectors like <strong>CSS</strong>, <strong>By ID</strong>, <strong>By ClassName</strong>, <strong>xPath</strong> (In Selenium and Python Only)</li>
+<li>Add assertions - to be sure that you are referring to the right element at the right time instead of "static" wait(ms).<ul>
+<li>Using Cypress: <code>should('contain.text', 'Login')</code></li>
+<li>Using Cypress: <code>should('be.visible')</code></li>
+<li>Using Selenium, Python: <code>self.applicant_acc_settings.profile_picture.is_present()</code></li>
+</ul>
+</li>
+<li>Don't forget to stretch in between the tests</li>
+</ul>
+<h2 id="03-coding-standards">03. Coding Standards</h2>
+<ul>
+<li><strong>Quotes:</strong> Use single-quotes for string literals, e.g. <strong>'my-identifier'</strong>, but use double-quotes for strings that are likely to contain single-quote characters as part of the string itself (such as error messages, or any strings containing natural language), e.g. <strong>"You've got an error!"</strong>. For triple-quoted strings, always use double quote characters to be consistent with the docstring convention in PEP 257.</li>
+<li><strong>Imports grouping:</strong> Should be grouped in the following order (Python Selenium Only)<ul>
+<li>standard library imports</li>
+<li>related third party imports</li>
+<li>local application/library specific imports</li>
+</ul>
+</li>
+<li><strong>Import code:</strong> You should put a blank line between each group of imports. <strong>Don’t use joker</strong> <code>from module import *</code>. Instead list the names you need explicitly: <code>from module import name1, name2</code>. Examples:<ul>
+<li>Cypress:<ul>
+<li><code>import { onNavigations } from "../../../support.page_obejcts/navigations"</code></li>
+</ul>
+</li>
+<li>Selenium, Python:<ul>
+<li><code>from project.page_objects.registration.welcome_page import WelcomePage</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Consistent Indentation:</strong> (Python Only)<ul>
+<li>Spaces are the preferred indentation method. Tabs should be used solely to remain consistent with code that is already indented with tabs. Python 3 disallows mixing the use of tabs and spaces for indentation. Python 2 code indented with a mixture of tabs and spaces should be converted to using spaces exclusively.</li>
+<li>When invoking the Python 2 command line interpreter with the -t option, it issues warnings about code that illegally mixes tabs and spaces. When using -tt these warnings become errors. <strong>These options are highly recommended!</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Avoid Obvious Comments:</strong></p>
+<ul>
+<li>
+<p>Commenting your code is fantastic; however, it can be overdone or just be plain redundant. Take this example:</p>
+<pre><code># get the country code
+country_code = get_country_code(remote_address)
+# if country code is US
+if  country_code == 'US':
+// display the form input for state
+form_input_state()
+</code></pre>
+</li>
+<li>
+<p>When the text is that obvious, it's really not productive to repeat it within comments. If you must comment on that code, you can simply combine it to a single line instead:</p>
+<pre><code># display state selection for US users
+country_code = get_country_code(remote_address)
+If country_code == 'US':
+form_input_state()
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Grouping:</strong></p>
+<ul>
+<li>More often than not, certain tasks require a few lines of code. It is a good idea to keep these tasks within separate blocks of code, with some spaces between them:<pre><code># import local application/library
+from xpath import xpath_list
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="04-framework-guidelines">04. Framework Guidelines</h2>
+<ul>
+<li>Test case data should be kept in separate files.</li>
+<li>Logs and Reports folder should be maintained.</li>
+<li>Proper logs should be maintained.</li>
+<li>Html Reports should be generated.</li>
+<li>Rerunning of automation scripts should not override the old reports.</li>
+<li>Proper Exception Handling should be done.</li>
+<li>Your framework should contain the Readme.md file which explains the execution steps.</li>
+<li>Setup file should be created which includes all dependencies installation.</li>
+<li>Virtual environment of python should be done correctly so that all dependencies and packages installed separately.</li>
+<li>Make sure the objective for your code is clear. That reflects, use meaningful names for your variables, functions, classes, modules, files etc. While doing so, make sure you don't accidentally use the standard function name or module name. (Refer:<code>http://pycogent.org/coding_guidelines.html</code>).</li>
+<li>Add proper module, class, function level doc-comments. If possible, include example in doc-comments.</li>
+<li>Don’t try to put too much code under one function. 200 lines is an absolute maximum – 50 is usually more reasonable.</li>
+<li>Remove the commented code. If required, it could be brought back by source revisions.</li>
+<li>Remove any duplicate code if exist. This could be done by moving duplicated code under a function and calling those instead.</li>
+<li>Check if code could be simpler. Break complex routines down into smaller ones, consider using built-in functions and data types instead of custom ones, see if complex logic can be separated into a dispatch routine and simple individual functions, etc.</li>
+<li>Make use of existing framework functions/APIs/utility methods instead of writing new.</li>
+<li>If any improvement on existing framework is possible, do that but get it reviewed prior to commit.</li>
+<li>Follow the PEP8 guidelines. It's much more easy from the IDE you use. Like for ex: In PyCharm you can convert your code as per PEP8 standards by shortcut Opt+Cmd+L.</li>
+</ul>
+<h2 id="05-about-html-elements">05. About HTML Elements</h2>
+<ul>
+<li>Html DOM consists of: HTML Tags, HTML Attributes and Attributes values</li>
+<li>Class and ID are also HTML attribute names</li>
+<li>Class attribute can have several values and each value is separated by space</li>
+<li>HTML tags usually come in pairs of Opening and Closing tag. Closing tag has the same name and forward slash</li>
+<li>Value in between angle brackets (&gt;here&lt;) is a plain text</li>
+<li>Elements above the “key” web element are Parent elemens</li>
+<li>Elements inside of the “key” Element are Child Elements</li>
+<li>Elements placed at the same level side by side are Sibiling Elements</li>
+<li>Remember to use the best locators (never use absolute XPath or absolute CSS).</li>
+<li>ID and data attributes are the best for locating elements.</li>
+</ul>
+<h2 id="06-bad-coding-good-coding">06. Bad Coding - Good Coding</h2>
+<h3 id="examples">Examples</h3>
+<h4 id="wait-for-page-to-load">Wait for page to load</h4>
+<details>
+<summary>BAD</summary>
+
+
+<pre><code class="language-java">public void waitForPageToLoad(String string){
+  String url = browserDriver.getCurrentUrl();
+  Boolean stringExists = url.contains(string);
+  int Count = 0;
+
+  while (Boolean.FALSE.equals(stringExists) &amp;&amp; Count &lt; 100){
+     url = browserDriver.getCurrentUrl();
+     stringExists = url.contains(string);
+     Count = Count + 1;
+     try {
+        Thread.sleep(500);
+     } catch (InterruptedException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+     }
+  }
+
+   //if(stringExists==false)
+   if(Boolean.FALSE.equals(stringExists))
+      throw new IllegalStateException(
+        “Page not loaded. Current page” + “is: “
+         + browserDriver.getCurrentUrl());
+   }
+}
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>GOOD</summary>
+
+
+<pre><code class="language-java">public void isUrlCorrect(String keyword){ 
+  int count = 0;
+
+   do {
+     count ++;
+     waitFor(1);
+   } while (urlContains(keyword) == false &amp;&amp; count &lt; 30);
+
+   if(count == 30)
+     throw new PageNotDisplayedException(“Page not loaded”);; 
+}
+private void urlContains(String keyword) {
+   return driver.getCurrentUrl().contains(keyword);
+}
+</code></pre>
+
+
+</details>
+<details>
+<summary>BEST</summary>
+
+
+<pre><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, 30);
+wait.until(ExpectedConditions.urlContains(keyword));
+</code></pre>
+
+
+</details>
+
+<h4 id="click-elements">Click elements</h4>
+<details>
+<summary>BAD</summary>
+
+
+<pre><code class="language-java">public void Click(){
+
+  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+  try {
+    wait.until(ExpectedConditions.elementToBeClickable(locator));
+    driver.findElement(locator).click();
+    System.out.println(“Clicked webelement at: “+locator );
+  }
+  catch (RuntimeException e) {
+    System.out.println(e);
+    WaitMilliSeconds(500);
+    if (Boolean.FALSE.equals(
+                    driver.findElement(locator).isEnabled()))
+       throw new NoSuchElementException(
+          “Elment not found at locator: “+ locator);
+    driver.findElement(locator).click();
+ }
+
+}
+</code></pre>
+
+
+</details>
+<details>
+<summary>GOOD</summary>
+
+
+<pre><code class="language-java">public void click(){
+ WebElement element = this.wait.until(ExpectedConditions.
+                            elementToBeClickable(this.locator));
+ element.click();
+}
+</code></pre>
+
+
+</details>
+
+<h4 id="send-keys">Send keys</h4>
+<details>
+<summary>BAD</summary>
+
+
+<pre><code class="language-java">public void SendKeys(String text){
+ wait = (new WebDriverWait(driver, 4));
+ try
+ {
+    wait.until(ExpectedConditions
+        .visibilityOfElementLocated(locator));
+    driver.findElement(locator).sendKeys(text);
+    System.out.println(“Entered sendKey text: “+text);
+    //SendKeyEnter();
+    System.out.println(“Click Enter”);
+    WaitMilliSeconds(1000);
+ }
+ catch(RuntimeException e)
+ {
+    System.out.println(“\nSecond attempt to SendKey text:” + text);
+    Wait();
+    driver.findElement(locator).sendKeys(text);
+    SendKeyEnter();
+ }
+
+}
+</code></pre>
+
+
+</details>
+<details>
+<summary>GOOD</summary>
+
+
+<pre><code class="language-java">public void sendKeys(String text){
+  WebElement element = wait.until(ExpectedConditions
+                          .visibilityOfElementLocated(locator));
+  element.sendKeys(text);
+}
+</code></pre>
+
+
+</details>
+
+<h4 id="wait-until-web-element-is-clickable">Wait until web element is clickable</h4>
+<details>
+<summary>BAD</summary>
+
+
+<pre><code class="language-java">public void WaitUntilWebElementClickable(){
+ try {
+   wait.until(ExpectedConditions.elementToBeClickable(locator));
+ }
+ catch (RuntimeException e) {
+   WaitMilliSeconds(2000);
+   driver.navigate().refresh();
+   System.out.println(“refresh internally…”);
+   wait.until(ExpectedConditions.elementToBeClickable(
+        driver.findElement(locator)));
+ }
+}
+</code></pre>
+
+
+</details>
+<details>
+<summary>GOOD</summary>
+
+
+<pre><code class="language-java">public void waitUntilElementClickable(){
+ wait.until(ExpectedConditions.elementToBeClickable(locator));
+}
+</code></pre>
+
+
+</details>
+
+<h4 id="get-text">Get text</h4>
+<details>
+<summary>BAD</summary>
+
+
+<pre><code class="language-java">public String getText() {
+ try {
+   wait.until(ExpectedConditions
+          .visibilityOfElementLocated(locator));
+   return driver.findElement(locator).getText().toString().trim();
+ }
+ catch (RuntimeException e){
+   System.out.println(“getText() exception: “+ e);
+   return “”;
+ }
+}
+</code></pre>
+
+
+</details>
+<details>
+<summary>GOOD</summary>
+
+
+<pre><code class="language-java">public String getText() {
+ WebElement element = wait.until(ExpectedConditions.
+                         visibilityOfElementLocated(locator));
+ return element.getText().trim();
+}
+</code></pre>
+
+
+</details>
+
+<h2 id="07-useful-links">07. Useful Links</h2>
+<ul>
+<li><a href="https://www.python.org/dev/peps/pep-0257/">Docstring Conventions</a></li>
+<li><a href="https://docs.cypress.io/guides/references/best-practices">Cypress Best Practice</a></li>
+<li><a href="https://www.lambdatest.com/blog/selenium-best-practices-for-web-testing/">Selenium Best Practice</a></li>
+<li><a href="https://blog.testproject.io/2020/12/03/selenium-automation-best-practices-tips-you-must-know/">Selenium Best Practice - TestProjectIO</a></li>
+<li><a href="https://sceweb.sce.uhcl.edu/helm/WEBPAGE-SWtesting/my_files/Quick%20Guide/software_testing__quick_guide.html">Software Testing Guidelines</a></li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../qa_coding_guidelines/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Coding Guidelines" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Coding Guidelines
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../qa_good_practice/" class="md-footer__link md-footer__link--next" aria-label="Next: Automation Good Practice" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Automation Good Practice
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.tabs.link"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>
