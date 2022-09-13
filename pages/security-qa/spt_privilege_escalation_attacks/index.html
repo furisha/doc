@@ -1,0 +1,1147 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://furisha.github.io/doc/pages/security-qa/spt_privilege_escalation_attacks/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+    
+    
+      
+        <title>Privilege Escalation Attacks - Furman QA Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#security-qa-privilege-escalation-attacks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://furisha.github.io/doc/" title="Furman QA Docs" class="md-header__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Furman QA Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Privilege Escalation Attacks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://furisha.github.io/doc/" title="Furman QA Docs" class="md-nav__button md-logo" aria-label="Furman QA Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo-furman(100).png#center" alt="logo">
+
+    </a>
+    Furman QA Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          QA Box
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QA Box" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          QA Box
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_code_review/" class="md-nav__link">
+        Code Review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_skills/" class="md-nav__link">
+        Automation Skills
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_coding_guidelines/" class="md-nav__link">
+        Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_coding_guidelines_advanced/" class="md-nav__link">
+        Advanced Coding Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_good_practice/" class="md-nav__link">
+        Automation Good Practice
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_terms/" class="md-nav__link">
+        QA Terms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_expert/" class="md-nav__link">
+        QA Expert
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Framework Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Framework Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Framework Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework_setup/fs_cypress/" class="md-nav__link">
+        Cypress (Javascript)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework_setup/fs_selenium_java/" class="md-nav__link">
+        Selenium (Java)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework_setup/fs_selenium_python/" class="md-nav__link">
+        Selenium (Python)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework_setup/fs_selenium_python_seleniumbase/" class="md-nav__link">
+        Selenium (Python-SeleniumBase)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Code Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Code Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_examples/selenium/ce_selenium_java/" class="md-nav__link">
+        Selenium Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code_examples/selenium/ce_seleniumbase_python/" class="md-nav__link">
+        SeleniumBase Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Security QA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Security QA" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Security QA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spt_security_testing/" class="md-nav__link">
+        Security Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spt_penetration_testing/" class="md-nav__link">
+        Penetration Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Privilege Escalation Attacks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Privilege Escalation Attacks
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#horizontal-vs-vertical-privilege-escalation" class="md-nav__link">
+    Horizontal vs. Vertical Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Horizontal vs. Vertical Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#there-are-two-types-of-privilege-escalation" class="md-nav__link">
+    There are two types of privilege escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="There are two types of privilege escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-horizontal-privilege-escalation" class="md-nav__link">
+    1. Horizontal privilege escalation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vertical-privilege-escalation" class="md-nav__link">
+    2. Vertical privilege escalation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-it-important-to-prevent-privilege-escalation-attacks" class="md-nav__link">
+    Why Is It Important to Prevent Privilege Escalation Attacks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-privilege-escalation-attacks-work" class="md-nav__link">
+    How Do Privilege Escalation Attacks Work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation-attack-vectors" class="md-nav__link">
+    Privilege Escalation Attack Vectors
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation Attack Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-credential-exploitation" class="md-nav__link">
+    1. Credential Exploitation
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Credential Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-ways-attackers-can-gain-access-to-credentials" class="md-nav__link">
+    Common ways attackers can gain access to credentials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vulnerabilities-and-exploits" class="md-nav__link">
+    2. Vulnerabilities and Exploits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-misconfigurations" class="md-nav__link">
+    3. Misconfigurations
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Misconfigurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-misconfigurations-can-lead-to-privilege-escalation" class="md-nav__link">
+    Security misconfigurations - can lead to privilege escalation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-malware" class="md-nav__link">
+    4. Malware
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Malware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-examples-of-malware-for-privilege-escalation" class="md-nav__link">
+    Common examples of malware - for privilege escalation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-social-engineering" class="md-nav__link">
+    5. Social Engineering
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Social Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-types-of-social-engineering-attacks-used-for-privilege-escalation" class="md-nav__link">
+    Common types of social engineering attacks - used for privilege escalation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spt_sql_injection/" class="md-nav__link">
+        SQL Injection
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#horizontal-vs-vertical-privilege-escalation" class="md-nav__link">
+    Horizontal vs. Vertical Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Horizontal vs. Vertical Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#there-are-two-types-of-privilege-escalation" class="md-nav__link">
+    There are two types of privilege escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="There are two types of privilege escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-horizontal-privilege-escalation" class="md-nav__link">
+    1. Horizontal privilege escalation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vertical-privilege-escalation" class="md-nav__link">
+    2. Vertical privilege escalation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-it-important-to-prevent-privilege-escalation-attacks" class="md-nav__link">
+    Why Is It Important to Prevent Privilege Escalation Attacks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-privilege-escalation-attacks-work" class="md-nav__link">
+    How Do Privilege Escalation Attacks Work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation-attack-vectors" class="md-nav__link">
+    Privilege Escalation Attack Vectors
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation Attack Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-credential-exploitation" class="md-nav__link">
+    1. Credential Exploitation
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Credential Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-ways-attackers-can-gain-access-to-credentials" class="md-nav__link">
+    Common ways attackers can gain access to credentials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vulnerabilities-and-exploits" class="md-nav__link">
+    2. Vulnerabilities and Exploits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-misconfigurations" class="md-nav__link">
+    3. Misconfigurations
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Misconfigurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-misconfigurations-can-lead-to-privilege-escalation" class="md-nav__link">
+    Security misconfigurations - can lead to privilege escalation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-malware" class="md-nav__link">
+    4. Malware
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Malware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-examples-of-malware-for-privilege-escalation" class="md-nav__link">
+    Common examples of malware - for privilege escalation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-social-engineering" class="md-nav__link">
+    5. Social Engineering
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Social Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-types-of-social-engineering-attacks-used-for-privilege-escalation" class="md-nav__link">
+    Common types of social engineering attacks - used for privilege escalation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="security-qa-privilege-escalation-attacks">[Security-QA] <code>Privilege Escalation Attacks</code></h1>
+<p>Privilege escalation is a type of network attack used to gain unauthorized access to systems within a security perimeter.</p>
+<p>Attackers start by finding weak points in an organization’s defenses and gaining access to a system. In many cases that first point of penetration will not grant attackers with the level of access or data they need. They will then attempt privilege escalation to gain more permissions or obtain access to additional, more sensitive systems.</p>
+<h2 id="horizontal-vs-vertical-privilege-escalation">Horizontal vs. Vertical Privilege Escalation</h2>
+<h3 id="there-are-two-types-of-privilege-escalation">There are two types of privilege escalation</h3>
+<h4 id="1-horizontal-privilege-escalation">1. Horizontal privilege escalation</h4>
+<p>An attacker expands their privileges by taking over another account and misusing the legitimate privileges granted to the other user.</p>
+<h4 id="2-vertical-privilege-escalation">2. Vertical privilege escalation</h4>
+<p>An attacker attempts to gain more permissions or access with an existing account they have compromised. For example, an attacker takes over a regular user account on a network and attempts to gain administrative permissions or root access.</p>
+<h2 id="why-is-it-important-to-prevent-privilege-escalation-attacks">Why Is It Important to Prevent Privilege Escalation Attacks</h2>
+<p>For attackers, privilege escalation is a means to an end. It allows them to gain access to an environment, persist and deepen their access, and perform more severe malicious activity. For example, privilege escalation can transform a simple malware infection into a catastrophic data breach</p>
+<p>Privilege escalations allow attackers to open up new attack vectors on a target system. For example, it can involve:</p>
+<ul>
+<li>Gaining access to other connected systems</li>
+<li>Deploying additional malicious payloads on a target system</li>
+<li>Adjusting security settings or privileges</li>
+<li>Gaining access to applications or data on a system beyond the privileges of the original compromised account</li>
+<li>In extreme cases, gaining root access to a target system or an entire network</li>
+</ul>
+<p>When security teams suspect privilege escalation it is important to perform an in-depth investigation. Signs of privilege escalation include malware on sensitive systems, suspicious logins, and unusual network communications.</p>
+<p>Any privilege escalation incident must be dealt with as a severe security incident and, depending on the organization’s compliance obligations, might have to be reported to authorities.</p>
+<h2 id="how-do-privilege-escalation-attacks-work">How Do Privilege Escalation Attacks Work</h2>
+<p>Privilege escalation attacks typically involve the exploitation of vulnerabilities such as software bugs, misconfigurations, and incorrect access controls.</p>
+<p>Every account that interacts with a system has some privileges. Standard users typically have limited access to system databases, sensitive files, or other resources. In some cases, users have excessive access to sensitive resources, and may not even be aware of it, because they do not try to gain access beyond their entitlements. In other cases, attackers can manipulate weaknesses of the system to increase privileges.</p>
+<p>By taking over a low-level user account and either abusing excessive privileges, or increasing privileges, a malicious attacker has an entry point to a sensitive system. Attackers might dwell in a system for some time, performing reconnaissance and waiting for an opportunity to deepen their access. Eventually, they will find a way to escalate privileges to a higher level than the account that was initially compromised.</p>
+<p>Depending on their goal, attackers can continue horizontally to take control of additional systems, or escalate privileges vertically, to gain admin and root control, until they have access to the entire full environment.</p>
+<h2 id="privilege-escalation-attack-vectors">Privilege Escalation Attack Vectors</h2>
+<h3 id="1-credential-exploitation">1. Credential Exploitation</h3>
+<p>Single factor authentication leaves the door wide open to attackers planning on performing privilege escalation. If attackers obtain a privileged user’s account name – even without the password – it is a matter of time before they obtain the password. Once they obtain a working password, they can move laterally through the environment undetected.</p>
+<p>Even if the attacker is detected and the organization resets the password or reimages the affected system, the attacker may have a way to retain a persistent presence – for example, via a compromised mobile phone or rootkit malware on a device. This makes it important to thoroughly eradicate the threat and continuously monitor for anomalies.</p>
+<h4 id="common-ways-attackers-can-gain-access-to-credentials">Common ways attackers can gain access to credentials</h4>
+<p><code>Password exposure</code> – in many cases passwords are available in open site, because employees share them with others, reuse them, or store them in plaintext on their machines.</p>
+<p><code>Password guessing</code> – attackers can use publicly available information about the account owner to make educated guesses about their password. If attackers guess one password, they can often gain access to multiple resources due to password reuse.</p>
+<p><code>Shoulder surfing</code> – attackers can observe the actions of privileged individuals, either in person, via unauthorized access to cameras, or through keyloggers on their devices, and thus gain access to passwords.</p>
+<p><code>Dictionary attacks</code> – the use of lists of common words to automatically combine possible passwords and try to access an account. Attackers can customize the dictionary according to known password length and requirements. Password complexity policies and limiting the number of password retries are effective against these attacks.</p>
+<p><code>Rainbow table attacks</code> – a rainbow table assumes the attacker knows the algorithm used to hash passwords, and converts these hashes into original passwords. These attacks need some seed information to succeed.</p>
+<p><code>Brute force password attacks</code> – attackers typically use these as a last resort. They are only effective against shorter passwords with limited complexity, and where there are no limits on the number of password retries.</p>
+<p><code>Password spraying</code> – this is the opposite of a brute force attack: an automated attempt to gain access to a large number of accounts using a few very common passwords.</p>
+<p><code>Pass-the-Hash (PtH)</code> – this involves using the NT Lan Manager hash of a password instead of the original plaintext password. The hash can be scraped from active memory or obtained by other techniques that exploit weaknesses in the authentication protocol.</p>
+<p><code>Security questions</code> – many password mechanisms rely on security questions in case the user forgets their password. These are questions about the user’s life, many of which are easy to obtain from social media or individuals who know the user, or from the dark web (many security question databases were exposed in previous breaches).</p>
+<p><code>Credential stuffing</code> – attackers use a list of usernames or email addresses and passwords they obtained from previous breaches or the dark web, and try it against accounts in a target system. Because individuals commonly reuse passwords, this technique has high success rates.</p>
+<p><code>Password changes and resets</code> – attackers can easily compromise password reset mechanisms. Whenever a password is reset, there is an implicit risk in the process of transmission and storage of the new password. Attackers can gain access to a password legitimately reset by a user, or request password reset themselves after compromising a device.</p>
+<h3 id="2-vulnerabilities-and-exploits">2. Vulnerabilities and Exploits</h3>
+<p>Attackers can perform privilege escalation by exploiting vulnerabilities in the design, implementation, or configuration of multiple systems – including communication protocols, communication transports, operating systems, browsers, web applications, cloud systems, and network infrastructure.</p>
+<p>The level of risk depends on the nature of the vulnerability and how critical is the system in which the vulnerability is discovered. Only a small fraction of vulnerabilities allow vertical privilege escalation. However, any vulnerability that can allow an attacker to change privileges should be treated with high severity.</p>
+<h3 id="3-misconfigurations">3. Misconfigurations</h3>
+<p>Privilege escalation very commonly results from misconfiguration, such as failure to configure authentication for a sensitive system, mistakes in firewall configuration, or open ports.</p>
+<h4 id="security-misconfigurations-can-lead-to-privilege-escalation">Security misconfigurations - can lead to privilege escalation</h4>
+<ul>
+<li>Cloud storage buckets exposed to the Internet with no authentication.</li>
+<li>Default passwords used for admin or root accounts (this is common for IoT devices).</li>
+<li>Insecure defaults for a newly installed system, which are not changed due to negligence or lack of knowledge.</li>
+<li>Backdoor into the environment which was known to administrators but not documented, and is discovered by an attacker.</li>
+</ul>
+<h3 id="4-malware">4. Malware</h3>
+<p>Attackers can use many types of malware, including trojans, spyware, worms, and ransomware, to gain a hold on an environment and perform privilege escalation. Malware can be deployed by exploiting a vulnerability, can be packaged with legitimate applications, via malicious links or downloads combined with social engineering, or via weaknesses in the supply chain.</p>
+<p>Malware typically runs as an operating system process, and has the permissions of the user account from which it was executed. So there are two directions for exploitation:</p>
+<p>Attackers who gain access to a user account can deploy malware at user level, and then find a way to increase their privileges.</p>
+<p>Attacks who have already escalated privileges can deploy malware at admin or root level, and use it to gain persistent access to an entire environment.</p>
+<h4 id="common-examples-of-malware-for-privilege-escalation">Common examples of malware - for privilege escalation</h4>
+<p><code>Worms</code> – malware that relies on bugs and vulnerabilities to deliver malicious payloads and propagate to other systems. Worms are a common mechanism for horizontal privilege escalation.</p>
+<p><code>Rootkits</code> – a malicious process running on a target device which grants the attacker complete control over its operating system, enabling vertical privilege escalation.</p>
+<p><code>Bad bots</code> – automated mechanisms that perform malicious actions against target resources. Bots can be used in the reconnaissance phase of a privilege escalation attack, and are also commonly used to spread worms.</p>
+<p><code>Trojan</code> – malware disguised as a normal file or application, which persists on the user’s device, and can deploy other malware or modify system operations. Many authentication based attacks rely on trojans.</p>
+<p><code>Ransomware</code> – ransomware can rapidly spread across networks and serve as a horizontal privilege escalation mechanism.</p>
+<p><code>Adware</code> – malware that loads unwanted advertisements to a user. Interacting with these ads can result in additional malware deployed on the device, serving as a vertical privilege escalation mechanism.</p>
+<p><code>Spyware</code> – spyware performs surveillance on a device, for example by monitoring a user’s activity on the keyboard or granting access to the screen, microphone, or camera. Attackers can use these inputs to steal credentials and compromise user accounts.</p>
+<h3 id="5-social-engineering">5. Social Engineering</h3>
+<p>Social engineering is used in almost all cyber attacks. It relies on manipulating people into violating security procedures and divulging sensitive or personal information. It is a very common technique used by attackers to gain unauthorized access and escalate privileges.</p>
+<p>Social engineering is highly effective because it circumvents security controls by preying on human weaknesses and emotions. Attackers realize that it is much easier to trick or manipulate a privileged user than break into a well-defended security system.</p>
+<h4 id="common-types-of-social-engineering-attacks-used-for-privilege-escalation">Common types of social engineering attacks - used for privilege escalation</h4>
+<p><code>Phishing</code> – an attacker sends a message that appears to be legitimate, with a malicious link or attachment. If the victim clicks the link or executes the attachment, the attacker typically deploys malware and compromises their device. Depending on the type of malware, this may allow the attacker to take over the user’s credentials.</p>
+<p><code>Spear phishing</code> – a sophisticated form of phishing custom-made for a specific privileged user or group of users. Spear phishing can allow attackers to take over highly privileged accounts like those belonging to system administrators, finance employees, or senior executives.</p>
+<p><code>Vishing (voice phishing)</code> – attackers call company employees impersonating an authoritative figure, such as the company’s IT staff, the bank, or law enforcement. Employees can be tricked into providing sensitive information like passwords or access details, or even coerced into installing malware on their device.</p>
+<p><code>Scareware</code> – a malicious software program that tricks victims into thinking their devices are infected, and asks them to download additional software or execute an action, which in reality deploys malware on their machine. Like other techniques, this can be used to compromise a victim’s device and take over their account.</p>
+<p><code>Watering hole</code> – an attacker compromises a website visited by a group of privileged individuals. For example, this could be a certain page on a corporate intranet. Any employee visiting the page may have a malicious script run in their browser, or can be tricked into clicking a malicious link.</p>
+<p><code>Pharming</code> – a fraud scheme in which software deployed on the victim’s device sends them to a fake website, impersonating a trusted institution like a bank or government website. The victim is then tricked into providing personal details, which the attacker can use to take over their account.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../spt_penetration_testing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Penetration Testing" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Penetration Testing
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../spt_sql_injection/" class="md-footer__link md-footer__link--next" aria-label="Next: SQL Injection" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SQL Injection
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.tabs.link"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>
