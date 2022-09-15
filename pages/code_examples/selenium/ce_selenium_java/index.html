@@ -830,6 +830,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../security-qa/spt_idor/" class="md-nav__link">
+        IDOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-qa/spt_csrf/" class="md-nav__link">
+        CSRF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../security-qa/spt_sql_injection/" class="md-nav__link">
         SQL Injection
       </a>
@@ -1089,469 +1117,469 @@
 
 <h1 id="selenium-java-example">Selenium-Java Example</h1>
 <h2 id="initialize">Initialize</h2>
-<pre><code class="language-java">Maven: selenium-firefox-driver
-import org.openqa.selenium.firefox.FirefoxDriver;
-WebDriver driver = new FirefoxDriver();
+<div class="highlight"><pre><span></span><code><span class="nl">Maven</span><span class="p">:</span><span class="w"> </span><span class="n">selenium</span><span class="o">-</span><span class="n">firefox</span><span class="o">-</span><span class="n">driver</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.firefox.FirefoxDriver</span><span class="p">;</span><span class="w"></span>
+<span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">();</span><span class="w"></span>
 
-// Maven: selenium-safari-driver
-import org.openqa.selenium.safari.SafariDriver;
-WebDriver driver = new SafariDriver();
+<span class="c1">// Maven: selenium-safari-driver</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.safari.SafariDriver</span><span class="p">;</span><span class="w"></span>
+<span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SafariDriver</span><span class="p">();</span><span class="w"></span>
 
-// Maven: selenium-chrome-driver
-import org.openqa.selenium.chrome.ChromeDriver;
-WebDriver driver = new ChromeDriver();
-</code></pre>
+<span class="c1">// Maven: selenium-chrome-driver</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="p">;</span><span class="w"></span>
+<span class="n">WebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
 <h2 id="locators">Locators</h2>
-<pre><code class="language-java">driver.findElement(By.className(&quot;className&quot;));
-driver.findElement(By.cssSelector(&quot;css&quot;));
-driver.findElement(By.id(&quot;id&quot;));
-driver.findElement(By.linkText(&quot;text&quot;));
-driver.findElement(By.name(&quot;name&quot;));
-driver.findElement(By.partialLinkText(&quot;pText&quot;));
-driver.findElement(By.tagName(&quot;input&quot;));
-driver.findElement(By.xpath(&quot;//*[@id='editor']&quot;));
-// Find multiple elementsList
-&lt;WebElement&gt; anchors = driver.findElements(By.tagName(&quot;a&quot;));
-// Search for an element inside anotherWebElement 
-div = driver.findElement(By.tagName(&quot;div&quot;)).findElement(By.tagName(&quot;a&quot;));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">className</span><span class="p">(</span><span class="s">&quot;className&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">cssSelector</span><span class="p">(</span><span class="s">&quot;css&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">linkText</span><span class="p">(</span><span class="s">&quot;text&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">name</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">partialLinkText</span><span class="p">(</span><span class="s">&quot;pText&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//*[@id=&#39;editor&#39;]&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="c1">// Find multiple elementsList</span><span class="w"></span>
+<span class="o">&lt;</span><span class="n">WebElement</span><span class="o">&gt;</span><span class="w"> </span><span class="n">anchors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElements</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="c1">// Search for an element inside anotherWebElement </span><span class="w"></span>
+<span class="n">div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">&quot;div&quot;</span><span class="p">)).</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">tagName</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
 <h2 id="basic-elements-operations">Basic Elements Operations</h2>
-<pre><code class="language-java">WebElement element = driver.findElement(By.id(&quot;id&quot;));
-element.click();
-element.sendKeys(&quot;someText&quot;);
-element.clear();
-element.submit();
-String innerText = element.getText();
-boolean isEnabled = element.isEnabled();
-boolean isDisplayed = element.isDisplayed();
-boolean isSelected = element.isSelected();
-WebElement element = driver.findElement(By.id(&quot;id&quot;));
-Select select = new Select(element);
-select.selectByIndex(1);
-select.selectByVisibleText(&quot;Ford&quot;);
-select.selectByValue(&quot;ford&quot;);
-select.deselectAll();
-select.deselectByIndex(1);
-select.deselectByVisibleText(&quot;Ford&quot;);
-select.deselectByValue(&quot;ford&quot;);
-List&lt;WebElement&gt; allSelected = select.getAllSelectedOptions();
-boolean isMultipleSelect = select.isMultiple();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">element</span><span class="p">.</span><span class="na">click</span><span class="p">();</span><span class="w"></span>
+<span class="n">element</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="s">&quot;someText&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">element</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span><span class="w"></span>
+<span class="n">element</span><span class="p">.</span><span class="na">submit</span><span class="p">();</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">innerText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span><span class="w"></span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">isEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">isEnabled</span><span class="p">();</span><span class="w"></span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">isDisplayed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">isDisplayed</span><span class="p">();</span><span class="w"></span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">isSelected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">isSelected</span><span class="p">();</span><span class="w"></span>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">Select</span><span class="w"> </span><span class="n">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Select</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="n">select</span><span class="p">.</span><span class="na">selectByIndex</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">select</span><span class="p">.</span><span class="na">selectByVisibleText</span><span class="p">(</span><span class="s">&quot;Ford&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">select</span><span class="p">.</span><span class="na">selectByValue</span><span class="p">(</span><span class="s">&quot;ford&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">select</span><span class="p">.</span><span class="na">deselectAll</span><span class="p">();</span><span class="w"></span>
+<span class="n">select</span><span class="p">.</span><span class="na">deselectByIndex</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">select</span><span class="p">.</span><span class="na">deselectByVisibleText</span><span class="p">(</span><span class="s">&quot;Ford&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">select</span><span class="p">.</span><span class="na">deselectByValue</span><span class="p">(</span><span class="s">&quot;ford&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">WebElement</span><span class="o">&gt;</span><span class="w"> </span><span class="n">allSelected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">select</span><span class="p">.</span><span class="na">getAllSelectedOptions</span><span class="p">();</span><span class="w"></span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">isMultipleSelect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">select</span><span class="p">.</span><span class="na">isMultiple</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
 <h2 id="advanced-element-operations">Advanced Element Operations</h2>
-<pre><code class="language-java">// Drag and Drop
-WebElement element = driver.FindElement(By.xpath(&quot;//[@id='project']/p[1]/div/div[2]&quot;));
-Actions move = new Actions(driver);
-move.dragAndDropBy(element, 30, 0).build().perform();
-// How to check if an element is visible
-Assert.assertTrue(driver.findElement(By.xpath(&quot;//[@id='tve_editor']/div&quot;)).isDisplayed());
-// Upload a file
-WebElement element = driver.findElement(By.id(&quot;RadUpload1file0&quot;));
-String filePath = &quot;D:WebDriver.Series.TestsWebDriver.xml&quot;;
-element.sendKeys(filePath);
-// Scroll focus to control
-WebElement link =driver.findElement(By.partialLinkText(&quot;Previous post&quot;));
-String js = String.format(&quot;window.scroll(0, %d);&quot;,link.getLocation().getY());
-((JavascriptExecutor)driver).executeScript(js);link.click();
-// Taking an element screenshot
-WebElement element =driver.findElement(By.xpath(&quot;//[@id='tve_editor']/div&quot;));
-File screenshotFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-BufferedImage fullImg = ImageIO.read(screenshotFile);
-Point point = element.getLocation();
-int elementWidth = element.getSize().getWidth();
-int elementHeight = element.getSize().getHeight();
-BufferedImage eleScreenshot = fullImg.getSubimage(point.getX(), point.getY(), elementWidth, elementHeight);
-ImageIO.write(eleScreenshot, &quot;png&quot;, screenshotFile);
-String tempDir = getProperty(&quot;java.io.tmpdir&quot;);
-File destFile = new File(Paths.get(tempDir, fileName + &quot;.png&quot;).toString());
-FileUtils.getFileUtils().copyFile(screenshotFile, destFile);
-// Focus on a control
-WebElement link =driver.findElement(By.partialLinkText(&quot;Previous post&quot;));
-Actions action = new Actions(driver);
-action.moveToElement(link).build().perform();
-// Wait for visibility of an element
-WebDriverWait wait = new WebDriverWait(driver, 30);
-wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(&quot;//[@id='tve_editor']/div[2]/div[2]/div/div&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Drag and Drop</span><span class="w"></span>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//[@id=&#39;project&#39;]/p[1]/div/div[2]&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">Actions</span><span class="w"> </span><span class="n">move</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span><span class="w"></span>
+<span class="n">move</span><span class="p">.</span><span class="na">dragAndDropBy</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">).</span><span class="na">build</span><span class="p">().</span><span class="na">perform</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// How to check if an element is visible</span><span class="w"></span>
+<span class="n">Assert</span><span class="p">.</span><span class="na">assertTrue</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//[@id=&#39;tve_editor&#39;]/div&quot;</span><span class="p">)).</span><span class="na">isDisplayed</span><span class="p">());</span><span class="w"></span>
+<span class="c1">// Upload a file</span><span class="w"></span>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">&quot;RadUpload1file0&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;D:WebDriver.Series.TestsWebDriver.xml&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">element</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Scroll focus to control</span><span class="w"></span>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">partialLinkText</span><span class="p">(</span><span class="s">&quot;Previous post&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">js</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;window.scroll(0, %d);&quot;</span><span class="p">,</span><span class="n">link</span><span class="p">.</span><span class="na">getLocation</span><span class="p">().</span><span class="na">getY</span><span class="p">());</span><span class="w"></span>
+<span class="p">((</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="n">driver</span><span class="p">).</span><span class="na">executeScript</span><span class="p">(</span><span class="n">js</span><span class="p">);</span><span class="n">link</span><span class="p">.</span><span class="na">click</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// Taking an element screenshot</span><span class="w"></span>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//[@id=&#39;tve_editor&#39;]/div&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">File</span><span class="w"> </span><span class="n">screenshotFile</span><span class="w"> </span><span class="o">=</span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="n">driver</span><span class="p">).</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span><span class="w"></span>
+<span class="n">BufferedImage</span><span class="w"> </span><span class="n">fullImg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">screenshotFile</span><span class="p">);</span><span class="w"></span>
+<span class="n">Point</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getLocation</span><span class="p">();</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">elementWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getSize</span><span class="p">().</span><span class="na">getWidth</span><span class="p">();</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">elementHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getSize</span><span class="p">().</span><span class="na">getHeight</span><span class="p">();</span><span class="w"></span>
+<span class="n">BufferedImage</span><span class="w"> </span><span class="n">eleScreenshot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fullImg</span><span class="p">.</span><span class="na">getSubimage</span><span class="p">(</span><span class="n">point</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w"> </span><span class="n">elementWidth</span><span class="p">,</span><span class="w"> </span><span class="n">elementHeight</span><span class="p">);</span><span class="w"></span>
+<span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">eleScreenshot</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">screenshotFile</span><span class="p">);</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">tempDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getProperty</span><span class="p">(</span><span class="s">&quot;java.io.tmpdir&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">File</span><span class="w"> </span><span class="n">destFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">tempDir</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.png&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span><span class="w"></span>
+<span class="n">FileUtils</span><span class="p">.</span><span class="na">getFileUtils</span><span class="p">().</span><span class="na">copyFile</span><span class="p">(</span><span class="n">screenshotFile</span><span class="p">,</span><span class="w"> </span><span class="n">destFile</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Focus on a control</span><span class="w"></span>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">partialLinkText</span><span class="p">(</span><span class="s">&quot;Previous post&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">Actions</span><span class="w"> </span><span class="n">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span><span class="w"></span>
+<span class="n">action</span><span class="p">.</span><span class="na">moveToElement</span><span class="p">(</span><span class="n">link</span><span class="p">).</span><span class="na">build</span><span class="p">().</span><span class="na">perform</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// Wait for visibility of an element</span><span class="w"></span>
+<span class="n">WebDriverWait</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+<span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfAllElementsLocatedBy</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//[@id=&#39;tve_editor&#39;]/div[2]/div[2]/div/div&quot;</span><span class="p">)));</span><span class="w"></span>
+</code></pre></div>
 <h2 id="basic-browser-operations">Basic Browser Operations</h2>
-<pre><code class="language-java">// Navigate to a page
-driver.navigate().to(&quot;http://google.com&quot;);
-// Get the title of the page
-String title = driver.getTitle();
-// Get the current URL
-String url = driver.getCurrentUrl();
-// Get the current page HTML source
-String html = driver.getPageSource();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Navigate to a page</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://google.com&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Get the title of the page</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// Get the current URL</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getCurrentUrl</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// Get the current page HTML source</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getPageSource</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
 <h2 id="advanced-browser-operations">Advanced Browser Operations</h2>
-<pre><code class="language-java">// Handle JavaScript pop-ups
-Alert alert = driver.switchTo().alert();
-alert.accept();
-alert.dismiss();
-// Switch between browser windows or tabs
-Set&lt;String&gt; windowHandles = driver.getWindowHandles();
-String firstTab = (String)windowHandles.toArray()[1];
-String lastTab = (String)windowHandles.toArray()[2];
-driver.switchTo().window(lastTab);
-// Navigation history
-driver.navigate().back();
-driver.navigate().refresh();
-driver.navigate().forward();
-// Maximize windowdriver.manage().window().maximize();
-// Add a new cookieCookie newCookie = new Cookie(&quot;customName&quot;, &quot;customValue&quot;);
-driver.manage().addCookie(newCookie);
-// Get all cookies
-Set&lt;Cookie&gt; cookies = driver.manage().getCookies();
-// Delete a cookie by name
-driver.manage().deleteCookieNamed(&quot;CookieName&quot;);
-// Delete all cookies
-driver.manage().deleteAllCookies();
-//Taking a full-screen screenshot
-File srceenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-String tempDir = getProperty(&quot;java.io.tmpdir&quot;);
-File destFile = new File(Paths.get(tempDir, fileName + &quot;.png&quot;).toString());
-FileUtils.getFileUtils().copyFile(srceenshotFile, destFile);
-// Wait until a page is fully loaded via JavaScript
-WebDriverWait wait = new WebDriverWait(driver, 30);
-wait.until(x -&gt; {((String)((JavascriptExecutor)driver).executeScript(&quot;return document.readyState&quot;)).equals(&quot;complete&quot;);});
-// Switch to frames
-driver.switchTo().frame(1);driver.switchTo().frame(&quot;frameName&quot;);
-WebElement element = driver.findElement(By.id(&quot;id&quot;));
-driver.switchTo().frame(element);
-// Switch to the default document
-driver.switchTo().defaultContent();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Handle JavaScript pop-ups</span><span class="w"></span>
+<span class="n">Alert</span><span class="w"> </span><span class="n">alert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">alert</span><span class="p">();</span><span class="w"></span>
+<span class="n">alert</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span><span class="w"></span>
+<span class="n">alert</span><span class="p">.</span><span class="na">dismiss</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// Switch between browser windows or tabs</span><span class="w"></span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">windowHandles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandles</span><span class="p">();</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">firstTab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">windowHandles</span><span class="p">.</span><span class="na">toArray</span><span class="p">()</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">lastTab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">windowHandles</span><span class="p">.</span><span class="na">toArray</span><span class="p">()</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">lastTab</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Navigation history</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">back</span><span class="p">();</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">refresh</span><span class="p">();</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">forward</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// Maximize windowdriver.manage().window().maximize();</span><span class="w"></span>
+<span class="c1">// Add a new cookieCookie newCookie = new Cookie(&quot;customName&quot;, &quot;customValue&quot;);</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">addCookie</span><span class="p">(</span><span class="n">newCookie</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Get all cookies</span><span class="w"></span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">Cookie</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cookies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">getCookies</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// Delete a cookie by name</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">deleteCookieNamed</span><span class="p">(</span><span class="s">&quot;CookieName&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Delete all cookies</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">deleteAllCookies</span><span class="p">();</span><span class="w"></span>
+<span class="c1">//Taking a full-screen screenshot</span><span class="w"></span>
+<span class="n">File</span><span class="w"> </span><span class="n">srceenshotFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="n">driver</span><span class="p">).</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">tempDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getProperty</span><span class="p">(</span><span class="s">&quot;java.io.tmpdir&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">File</span><span class="w"> </span><span class="n">destFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">tempDir</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.png&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span><span class="w"></span>
+<span class="n">FileUtils</span><span class="p">.</span><span class="na">getFileUtils</span><span class="p">().</span><span class="na">copyFile</span><span class="p">(</span><span class="n">srceenshotFile</span><span class="p">,</span><span class="w"> </span><span class="n">destFile</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Wait until a page is fully loaded via JavaScript</span><span class="w"></span>
+<span class="n">WebDriverWait</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+<span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{((</span><span class="n">String</span><span class="p">)((</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="n">driver</span><span class="p">).</span><span class="na">executeScript</span><span class="p">(</span><span class="s">&quot;return document.readyState&quot;</span><span class="p">)).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;complete&quot;</span><span class="p">);});</span><span class="w"></span>
+<span class="c1">// Switch to frames</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="s">&quot;frameName&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="n">element</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Switch to the default document</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">defaultContent</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
 <h2 id="advanced-browser-configurations">Advanced Browser Configurations</h2>
-<pre><code class="language-java">// Set a HTTP proxy Chromevar proxy = new Proxy();
-proxy.setProxyType(Proxy.ProxyType.MANUAL);
-proxy.setAutodetect(false);
-proxy.setSslProxy(&quot;127.0.0.1:3239&quot;);
-ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.setProxy(proxy);
-driver = new ChromeDriver(chromeOptions);
-// Accept all certificates 
-ChromeChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.addArguments(&quot;--ignore-certificate-errors&quot;);
-driver = new ChromeDriver(chromeOptions);
-// Set Chrome options
-ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.addArguments(&quot;user-data-dir=C:PathToUser Data&quot;);
-driver = new ChromeDriver(chromeOptions);
-// Set the default page load timeout
-driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-// Start Chrome with an unpacked extension
-ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.addArguments(&quot;load-extension=/path/to/extension&quot;);
-driver = new ChromeDriver(chromeOptions);
-// Start Chrome with a packed extension
-ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.addExtensions(new File(&quot;local/path/to/extension.crx&quot;));
-driver = new ChromeDriver(chromeOptions);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// Set a HTTP proxy Chromevar proxy = new Proxy();</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setProxyType</span><span class="p">(</span><span class="n">Proxy</span><span class="p">.</span><span class="na">ProxyType</span><span class="p">.</span><span class="na">MANUAL</span><span class="p">);</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setAutodetect</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setSslProxy</span><span class="p">(</span><span class="s">&quot;127.0.0.1:3239&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">setProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Accept all certificates </span><span class="w"></span>
+<span class="n">ChromeChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;--ignore-certificate-errors&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Set Chrome options</span><span class="w"></span>
+<span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;user-data-dir=C:PathToUser Data&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Set the default page load timeout</span><span class="w"></span>
+<span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">timeouts</span><span class="p">().</span><span class="na">pageLoadTimeout</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Start Chrome with an unpacked extension</span><span class="w"></span>
+<span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;load-extension=/path/to/extension&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Start Chrome with a packed extension</span><span class="w"></span>
+<span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addExtensions</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;local/path/to/extension.crx&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <h2 id="taking-a-screenshot">Taking a Screenshot</h2>
 <p>You can use the following method to take a full-screen screenshot of the browser.</p>
-<pre><code class="language-java">public void takeFullScreenshot(String fileName) throws Exception {
- File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
- String tempDir = getProperty(&quot;java.io.tmpdir&quot;);
- File destFile = new File(Paths.get(tempDir, fileName + &quot;.png&quot;).toString());
- FileUtils.getFileUtils().copyFile(srcFile, destFile);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">takeFullScreenshot</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">fileName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="n">srcFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">).</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">tempDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getProperty</span><span class="p">(</span><span class="s">&quot;java.io.tmpdir&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="n">destFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">tempDir</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.png&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span><span class="w"></span>
+<span class="w"> </span><span class="n">FileUtils</span><span class="p">.</span><span class="na">getFileUtils</span><span class="p">().</span><span class="na">copyFile</span><span class="p">(</span><span class="n">srcFile</span><span class="p">,</span><span class="w"> </span><span class="n">destFile</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>Sometimes you may need to take a screenshot of a single element.</p>
-<pre><code class="language-java">public void takeScreenshotOfElement(WebElement element, String fileName) throws Exception {
- File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
- BufferedImage fullImg = ImageIO.read(screenshotFile);
- Point point = element.getLocation();
- int elementWidth = element.getSize().getWidth();
- int elementHeight = element.getSize().getHeight();
- BufferedImage eleScreenshot = fullImg.getSubimage(point.getX(), point.getY(), elementWidth, elementHeight);
- ImageIO.write(eleScreenshot, &quot;png&quot;, screenshotFile);
- String tempDir = getProperty(&quot;java.io.tmpdir&quot;);
- File destFile = new File(Paths.get(tempDir, fileName + &quot;.png&quot;).toString());
- FileUtils.getFileUtils().copyFile(screenshotFile, destFile);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">takeScreenshotOfElement</span><span class="p">(</span><span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">fileName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="n">screenshotFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">TakesScreenshot</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">).</span><span class="na">getScreenshotAs</span><span class="p">(</span><span class="n">OutputType</span><span class="p">.</span><span class="na">FILE</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">BufferedImage</span><span class="w"> </span><span class="n">fullImg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">screenshotFile</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getLocation</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">elementWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getSize</span><span class="p">().</span><span class="na">getWidth</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">elementHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getSize</span><span class="p">().</span><span class="na">getHeight</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="n">BufferedImage</span><span class="w"> </span><span class="n">eleScreenshot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fullImg</span><span class="p">.</span><span class="na">getSubimage</span><span class="p">(</span><span class="n">point</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w"> </span><span class="n">elementWidth</span><span class="p">,</span><span class="w"> </span><span class="n">elementHeight</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">eleScreenshot</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">screenshotFile</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">tempDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getProperty</span><span class="p">(</span><span class="s">&quot;java.io.tmpdir&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="n">destFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">tempDir</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.png&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">());</span><span class="w"></span>
+<span class="w"> </span><span class="n">FileUtils</span><span class="p">.</span><span class="na">getFileUtils</span><span class="p">().</span><span class="na">copyFile</span><span class="p">(</span><span class="n">screenshotFile</span><span class="p">,</span><span class="w"> </span><span class="n">destFile</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>First, we make a full-screen screenshot then we locate the specified element by its location and size attributes. After that, the found rectangle chunk is saved as a BufferedImage.</p>
 <p>Here is how you use both methods in tests:</p>
-<pre><code class="language-java">@Test
-public void takeFullScreenshot_test() throws Exception {
- driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
- takeFullScreenshot(&quot;testImage&quot;);
-}
-@Test
-public void takeElementScreenshot_test() throws Exception {
- driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
- var element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;)));
- takeScreenshotOfElement(element, &quot;testElementImage&quot;);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">takeFullScreenshot_test</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://automatetheplanet.com&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">takeFullScreenshot</span><span class="p">(</span><span class="s">&quot;testImage&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">takeElementScreenshot_test</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://automatetheplanet.com&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;</span><span class="p">)));</span><span class="w"></span>
+<span class="w"> </span><span class="n">takeScreenshotOfElement</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;testElementImage&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="get-html-source-of-webelement">Get HTML Source of WebElement</h2>
 <p>You can use the getAttribute method of the WebElement interface to get the inner HTML of a specific element.</p>
-<pre><code class="language-java">@Test
-public void getHtmlSourceOfWebElement() {
- driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
- var element = wait.until(ExpectedConditions.visibilityOfElementLocated(
- By.xpath(&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;)));
- String sourceHtml = element.getAttribute(&quot;innerHTML&quot;);
- System.out.println(sourceHtml);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getHtmlSourceOfWebElement</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://automatetheplanet.com&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="w"></span>
+<span class="w"> </span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;</span><span class="p">)));</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">sourceHtml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="s">&quot;innerHTML&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sourceHtml</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="execute-javascript">Execute JavaScript</h2>
 <p>You can use the interface JavaScriptExecutor to execute JavaScript through WebDriver.</p>
-<pre><code class="language-java">@Test
-public void executeJavaScript() {
- driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
- JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
- String title = (String) javascriptExecutor.executeScript(&quot;return document.title&quot;);
- System.out.println(title);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">executeJavaScript</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://automatetheplanet.com&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">JavascriptExecutor</span><span class="w"> </span><span class="n">javascriptExecutor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">javascriptExecutor</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">&quot;return document.title&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">title</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>This test will take the current window's title via JavaScript and print it to the output window.</p>
 <h2 id="set-page-load-timeoout">Set Page Load Timeoout</h2>
 <p>There are at least three methods that you can use for the job.</p>
 <p>First, you can set the default driver's page load timeout through the WebDriver's options class.</p>
-<pre><code class="language-java">driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">timeouts</span><span class="p">().</span><span class="na">pageLoadTimeout</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <p>You can wait until the page is completely loaded via JavaScript.</p>
-<pre><code class="language-java">private void waitUntilLoaded() {
- wait.until(x -&gt;
- {
- JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
- String isReady = (String) javascriptExecutor.executeScript(&quot;return document.readyState&quot;);
- return isReady.equals(&quot;complete&quot;);
- });
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitUntilLoaded</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"></span>
+<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">JavascriptExecutor</span><span class="w"> </span><span class="n">javascriptExecutor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">isReady</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">javascriptExecutor</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="s">&quot;return document.readyState&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">isReady</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;complete&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>Your third option is to wait for a specific element(s) to be visible on the page.</p>
-<pre><code class="language-java">wait.until(ExpectedConditions.visibilityOfAllElements(
- driver.findElements(By.xpath(&quot;//*[@id='tve_editor']/div[2]/div[2]/div/div&quot;))));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">visibilityOfAllElements</span><span class="p">(</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElements</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//*[@id=&#39;tve_editor&#39;]/div[2]/div[2]/div/div&quot;</span><span class="p">))));</span><span class="w"></span>
+</code></pre></div>
 <h2 id="execute-tests-in-a-headless-browser">Execute Tests in a Headless Browser</h2>
 <p>You can use the ChromeOptions class and set a few arguments to set up Chrome to run without its UI in the so-called headless mode. You can do the same for Firefox and Edge Chromium.</p>
-<pre><code class="language-java">ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.addArguments(
-&quot;--headless&quot;, 
-&quot;--disable-gpu&quot;, 
-&quot;--window-size=1920,1200&quot;,
-&quot;--ignore-certificate-errors&quot;);
-driver = new ChromeDriver(chromeOptions);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="w"></span>
+<span class="s">&quot;--headless&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="s">&quot;--disable-gpu&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="s">&quot;--window-size=1920,1200&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="s">&quot;--ignore-certificate-errors&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <h2 id="check-if-an-element-is-visible">Check If an Element Is Visible</h2>
 <p>You can use the isDisplayed method of the WebElement interface.</p>
-<pre><code class="language-java">@Test
-public void checkIfElementIsVisible() {
- driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
- var element = driver.findElement(By.xpath(&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;);
- Assert.assertTrue(element).isDisplayed());
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkIfElementIsVisible</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://automatetheplanet.com&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;/html/body/div[1]/header/div/div[2]/div/div[2]/nav&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertTrue</span><span class="p">(</span><span class="n">element</span><span class="p">).</span><span class="na">isDisplayed</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="manage-cookies">Manage Cookies</h2>
 <p>Before you can work with the cookies of a site, you need to navigate to some of its pages.</p>
-<pre><code class="language-java">@Test
-public void manageCookies() {
- driver.navigate().to(&quot;http://automatetheplanet.com&quot;);
- // get all cookies
- var cookies = driver.manage().getCookies();
- for (Cookie cookie:cookies) {
- System.out.println(cookie.getName());
- }
- // get a cookie by name
- var fbPixelCookie = driver.manage().getCookieNamed(&quot;_fbp&quot;);
- // create a new cookie by name
- Cookie newCookie = new Cookie(&quot;customName&quot;, &quot;customValue&quot;);
- driver.manage().addCookie(newCookie);
- // delete a cookie
- driver.manage().deleteCookie(fbPixelCookie);
- // delete a cookie by name
- driver.manage().deleteCookieNamed(&quot;customName&quot;);
- // delete all cookies
- driver.manage().deleteAllCookies();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">manageCookies</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://automatetheplanet.com&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="c1">// get all cookies</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">cookies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">getCookies</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Cookie</span><span class="w"> </span><span class="n">cookie</span><span class="p">:</span><span class="n">cookies</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cookie</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="c1">// get a cookie by name</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">fbPixelCookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">getCookieNamed</span><span class="p">(</span><span class="s">&quot;_fbp&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="c1">// create a new cookie by name</span><span class="w"></span>
+<span class="w"> </span><span class="n">Cookie</span><span class="w"> </span><span class="n">newCookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cookie</span><span class="p">(</span><span class="s">&quot;customName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;customValue&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">addCookie</span><span class="p">(</span><span class="n">newCookie</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="c1">// delete a cookie</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">deleteCookie</span><span class="p">(</span><span class="n">fbPixelCookie</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="c1">// delete a cookie by name</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">deleteCookieNamed</span><span class="p">(</span><span class="s">&quot;customName&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="c1">// delete all cookies</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">deleteAllCookies</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="maximize-window">Maximize Window</h2>
 <p>Use the maximize method of the Window interface.</p>
-<pre><code class="language-java">driver.manage().window().maximize();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">window</span><span class="p">().</span><span class="na">maximize</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
 <h2 id="drag-and-drop">Drag and Drop</h2>
 <p>You can use the special Actions WebDriver class to perform complex UI interactions. Through its method dragAndDropBy, you can drag and drop. You only need to set the desired X and Y offsets.</p>
-<pre><code class="language-java">@Test
-public void dragAndDrop() {
- driver.navigate().to(&quot;http://loopj.com/jquery-simple-slider/&quot;);
- var element = driver.findElement(By.xpath(&quot;//*[@id='project']/p[1]/div/div[2]&quot;));
- Actions action = new Actions(driver);
- action.dragAndDropBy(element, 30, 0).build().perform();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dragAndDrop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://loopj.com/jquery-simple-slider/&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//*[@id=&#39;project&#39;]/p[1]/div/div[2]&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="n">Actions</span><span class="w"> </span><span class="n">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">action</span><span class="p">.</span><span class="na">dragAndDropBy</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">).</span><span class="na">build</span><span class="p">().</span><span class="na">perform</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="upload-a-file">Upload a File</h2>
 <p>It is a straightforward task to upload a file using WebDriver. You need to locate the file element and use the WebElement's sendKeys method to set the path to your file.</p>
-<pre><code class="language-java">@Test
-public void fileUpload() throws IOException {
- driver.navigate().to(
- &quot;https://demos.telerik.com/aspnet-ajax/ajaxpanel/application-scenarios/file-upload/defaultcs.aspx&quot;);
- var element = driver.findElement(By.id(&quot;ctl00_ContentPlaceholder1_RadUpload1file0&quot;));
- String filePath = Paths.get(getProperty(&quot;java.io.tmpdir&quot;), &quot;debugWebDriver.xml&quot;).toString();
- File destFile = new File(filePath);
- destFile.createNewFile();
- element.sendKeys(filePath);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fileUpload</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="w"></span>
+<span class="w"> </span><span class="s">&quot;https://demos.telerik.com/aspnet-ajax/ajaxpanel/application-scenarios/file-upload/defaultcs.aspx&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">id</span><span class="p">(</span><span class="s">&quot;ctl00_ContentPlaceholder1_RadUpload1file0&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&quot;java.io.tmpdir&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;debugWebDriver.xml&quot;</span><span class="p">).</span><span class="na">toString</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="n">destFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">destFile</span><span class="p">.</span><span class="na">createNewFile</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="handle-javascript-pop-ups">Handle JavaScript Pop-ups</h2>
 <p>You can use the accept and dismiss methods of the Alert interface to handle JavaScript pop-ups. First, you need to use the switchTo method to switch to the alert.</p>
-<pre><code class="language-java">@Test
-public void handleJavaScripPopUps() {
- driver.navigate().to(&quot;http://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm&quot;);
- driver.switchTo().frame(&quot;iframeResult&quot;);
- var button = driver.findElement(By.xpath(&quot;/html/body/button&quot;));
- button.click();
- Alert alert = driver.switchTo().alert();
- if (alert.getText().equals(&quot;Press a button!&quot;)) {
- alert.accept();
- }
- else {
- alert.dismiss();
- }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handleJavaScripPopUps</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="s">&quot;iframeResult&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;/html/body/button&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="n">button</span><span class="p">.</span><span class="na">click</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="n">Alert</span><span class="w"> </span><span class="n">alert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">alert</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">alert</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;Press a button!&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">alert</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">alert</span><span class="p">.</span><span class="na">dismiss</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="switch-between-browser-windows-or-tabs">Switch Between Browser Windows or Tabs</h2>
 <p>WebDriver drives the browser within a scope of one browser window. However, we can use its switchTo method to change the target window or tab.</p>
-<pre><code class="language-java">@Test
-public void movingBetweenTabs() {
- driver.navigate().to(&quot;https://www.automatetheplanet.com/&quot;);
- var firstLink = driver.findElement(By.xpath(&quot;//*[@id='menu-item-11362']/a&quot;));
- var secondLink = driver.findElement(By.xpath(&quot;//*[@id='menu-item-6']/a&quot;));
- String selectLinkOpenninNewTab = Keys.chord(Keys.CONTROL,Keys.RETURN);
- firstLink.sendKeys(selectLinkOpenninNewTab);
- secondLink.sendKeys(selectLinkOpenninNewTab);
- Set&lt;String&gt; windows = driver.getWindowHandles();
- String firstTab = (String)windows.toArray()[1];
- String lastTab = (String)windows.toArray()[2];
- driver.switchTo().window(lastTab);
- Assert.assertEquals(&quot;Resources - Automate The Planet&quot;, driver.getTitle());
- driver.switchTo().window(firstTab);
- Assert.assertEquals(&quot;Blog - Automate The Planet&quot;, driver.getTitle());
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">movingBetweenTabs</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;https://www.automatetheplanet.com/&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">firstLink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//*[@id=&#39;menu-item-11362&#39;]/a&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">secondLink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//*[@id=&#39;menu-item-6&#39;]/a&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">selectLinkOpenninNewTab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="na">chord</span><span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="na">CONTROL</span><span class="p">,</span><span class="n">Keys</span><span class="p">.</span><span class="na">RETURN</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">firstLink</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">selectLinkOpenninNewTab</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">secondLink</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">selectLinkOpenninNewTab</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">windows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getWindowHandles</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">firstTab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">windows</span><span class="p">.</span><span class="na">toArray</span><span class="p">()</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastTab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">windows</span><span class="p">.</span><span class="na">toArray</span><span class="p">()</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">lastTab</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="s">&quot;Resources - Automate The Planet&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">window</span><span class="p">(</span><span class="n">firstTab</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="s">&quot;Blog - Automate The Planet&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>The getWindowHandles method returns all open browser windows. You can pass the name of the desired tab/window to the window method of the TargetLocator interface (returned by the switchTo method) to change the current target.</p>
 <p>You can also notice that we use one more trick to open the link in a new tab using the Keys.chord method, and then instead of clicking, we use the sendKeys method to perform CTRL + return sequence.</p>
 <h2 id="navigation-history">Navigation History</h2>
 <p>WebDriver Navigation interface contains handy methods for going forward and backward. Also, you can refresh the current page.</p>
-<pre><code class="language-java">@Test
-public void navigationHistory() {
- driver.navigate().to(&quot;https://www.codeproject.com/Articles/1078541/Advanced-WebDriver-Tips-and-Tricks-Part&quot;);
- driver.navigate().to(&quot;http://www.codeproject.com/Articles/1017816/Speed-up-Selenium-Tests-through-RAM-Facts-and-Myth&quot;);
- driver.navigate().back();
- Assert.assertEquals(&quot;10 Advanced WebDriver Tips and Tricks - Part 1 - CodeProject&quot;, driver.getTitle());
- driver.navigate().refresh();
- Assert.assertEquals(&quot;10 Advanced WebDriver Tips and Tricks - Part 1 - CodeProject&quot;, driver.getTitle());
- driver.navigate().forward();
- Assert.assertEquals(&quot;Speed up Selenium Tests through RAM Facts and Myths - CodeProject&quot;, driver.getTitle());
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">navigationHistory</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;https://www.codeproject.com/Articles/1078541/Advanced-WebDriver-Tips-and-Tricks-Part&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://www.codeproject.com/Articles/1017816/Speed-up-Selenium-Tests-through-RAM-Facts-and-Myth&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">back</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="s">&quot;10 Advanced WebDriver Tips and Tricks - Part 1 - CodeProject&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">refresh</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="s">&quot;10 Advanced WebDriver Tips and Tricks - Part 1 - CodeProject&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">forward</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="s">&quot;Speed up Selenium Tests through RAM Facts and Myths - CodeProject&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="handle-ssl-certificate-error-chromedriver">Handle SSL Certificate Error ChromeDriver</h2>
-<pre><code class="language-java">ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.addArguments(&quot;--ignore-certificate-errors&quot;);
-driver = new ChromeDriver(chromeOptions);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;--ignore-certificate-errors&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <h2 id="scroll-focus-to-control">Scroll Focus to Control</h2>
 <p>There isn't a built-in mechanism in WebDriver to scroll focus to a control. However, you can use the JavaScript's method window.scroll. You only need to pass the getY location of the desired element.</p>
-<pre><code class="language-java">@Test
-public void scrollFocusToControl() {
- driver.navigate().to(&quot;http://automatetheplanet.com/&quot;);
- var ourMissionLink = driver.findElement(By.xpath(&quot;//*[@id=&quot;panel-6435-0-0-4&quot;]/div&quot;));
- String jsToBeExecuted = String.format(&quot;window.scroll(0, {0});&quot;, ourMissionLink.getLocation().getY());
- JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
- javascriptExecutor.executeScript(jsToBeExecuted);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">scrollFocusToControl</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://automatetheplanet.com/&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">ourMissionLink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//*[@id=&quot;</span><span class="n">panel</span><span class="o">-</span><span class="mi">6435</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">4</span><span class="s">&quot;]/div&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">jsToBeExecuted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;window.scroll(0, {0});&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ourMissionLink</span><span class="p">.</span><span class="na">getLocation</span><span class="p">().</span><span class="na">getY</span><span class="p">());</span><span class="w"></span>
+<span class="w"> </span><span class="n">JavascriptExecutor</span><span class="w"> </span><span class="n">javascriptExecutor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">JavascriptExecutor</span><span class="p">)</span><span class="w"> </span><span class="n">driver</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">javascriptExecutor</span><span class="p">.</span><span class="na">executeScript</span><span class="p">(</span><span class="n">jsToBeExecuted</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="focus-on-a-control">Focus on a Control</h2>
 <p>To do the trick, we use again the special Actions class, which has a method called moveToElement.</p>
-<pre><code class="language-java">@Test
-public void focusOnControl() {
- driver.navigate().to(&quot;http://automatetheplanet.com/&quot;);
- waitUntilLoaded();
- var ourMissionLink = driver.findElement(By.xpath(&quot;//*[@id=&quot;panel-6435-0-0-4&quot;]/div&quot;));
- Actions action = new Actions(driver);
- action.moveToElement(ourMissionLink).build().perform();
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">focusOnControl</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://automatetheplanet.com/&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">waitUntilLoaded</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">ourMissionLink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;//*[@id=&quot;</span><span class="n">panel</span><span class="o">-</span><span class="mi">6435</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">4</span><span class="s">&quot;]/div&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="n">Actions</span><span class="w"> </span><span class="n">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Actions</span><span class="p">(</span><span class="n">driver</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">action</span><span class="p">.</span><span class="na">moveToElement</span><span class="p">(</span><span class="n">ourMissionLink</span><span class="p">).</span><span class="na">build</span><span class="p">().</span><span class="na">perform</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="set-http-proxy-chromedriver">Set HTTP Proxy ChromeDriver</h2>
 <p>The configuration of a proxy for ChromeDriver is a little bit different from the one for FirefoxDriver. You need to use the special Proxy class in combination with ChromeOptions.</p>
-<pre><code class="language-java">var proxy = new Proxy();
-proxy.setProxyType(Proxy.ProxyType.MANUAL);
-proxy.setAutodetect(false);
-proxy.setSslProxy(&quot;127.0.0.1:3239&quot;);
-ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.setProxy(proxy);
-driver = new ChromeDriver(chromeOptions);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">proxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Proxy</span><span class="p">();</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setProxyType</span><span class="p">(</span><span class="n">Proxy</span><span class="p">.</span><span class="na">ProxyType</span><span class="p">.</span><span class="na">MANUAL</span><span class="p">);</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setAutodetect</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setSslProxy</span><span class="p">(</span><span class="s">&quot;127.0.0.1:3239&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">setProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <h2 id="set-http-proxy-with-authentication-chromedriver">Set HTTP Proxy with Authentication ChromeDriver</h2>
 <p>The only difference from the previous example is the configuration of the --proxy-server argument.</p>
-<pre><code class="language-java">var proxy = new Proxy();
-proxy.setProxyType(Proxy.ProxyType.MANUAL);
-proxy.setAutodetect(false);
-proxy.setSslProxy(&quot;127.0.0.1:3239&quot;);
-ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.setProxy(proxy);
-chromeOptions.addArguments(&quot;--proxy-server=http://user:password@127.0.0.1:3239&quot;);
-driver = new ChromeDriver(chromeOptions);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">proxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Proxy</span><span class="p">();</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setProxyType</span><span class="p">(</span><span class="n">Proxy</span><span class="p">.</span><span class="na">ProxyType</span><span class="p">.</span><span class="na">MANUAL</span><span class="p">);</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setAutodetect</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+<span class="n">proxy</span><span class="p">.</span><span class="na">setSslProxy</span><span class="p">(</span><span class="s">&quot;127.0.0.1:3239&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">setProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;--proxy-server=http://user:password@127.0.0.1:3239&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <h2 id="start-chromedriver-with-an-unpacked-extension">Start ChromeDriver with an Unpacked Extension</h2>
 <p>Chrome extensions can be either packed or unpacked. Packed extensions are a single file with a .crx extension. Unpacked Extensions are a directory containing the extension, including a manifest.json file. To load an unpacked extension you need to set the load-extension argument.</p>
-<pre><code class="language-java">chromeOptions.addArguments(&quot;load-extension=/pathTo/extension&quot;);
-driver = new ChromeDriver(chromeOptions);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;load-extension=/pathTo/extension&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <h2 id="start-chromedriver-with-an-packed-extension">Start ChromeDriver with an Packed Extension</h2>
 <p>Instead of setting the load-extension argument, you need to use the addExtension method of the ChromeOptions class to set the path to your packed extension.</p>
-<pre><code class="language-java">ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.addExtensions(new File(&quot;local/path/to/extension.crx&quot;));
-driver = new ChromeDriver(chromeOptions);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ChromeOptions</span><span class="w"> </span><span class="n">chromeOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addExtensions</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;local/path/to/extension.crx&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChromeDriver</span><span class="p">(</span><span class="n">chromeOptions</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <h2 id="assert-a-button-enabled-or-disabled">Assert a Button Enabled or Disabled</h2>
 <p>You can check if an element is disabled through the isEnabled method of the WebElement interface.</p>
-<pre><code class="language-java">@Test
-public void assertButtonEnabledDisabled() {
- driver.navigate().to(&quot;http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled&quot;);
- driver.switchTo().frame(&quot;iframeResult&quot;);
- var button = driver.findElement(By.xpath(&quot;/html/body/button&quot;));
- Assert.assertFalse(button.isEnabled());
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">assertButtonEnabledDisabled</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">switchTo</span><span class="p">().</span><span class="na">frame</span><span class="p">(</span><span class="s">&quot;iframeResult&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="na">xpath</span><span class="p">(</span><span class="s">&quot;/html/body/button&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertFalse</span><span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="na">isEnabled</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="verify-file-downloaded-chromedriver">Verify File Downloaded ChromeDriver</h2>
 <p>To change the default download directory of the current Chrome instance set the download.default_directory argument. When we initiate the file download, we use the WebDriverWait to wait until the file exists on the file system. Finally, we assert the file size. The whole code is surrounded with a try-finally block. In the finally we delete the downloaded file so that our test to be consistent every time.</p>
-<pre><code class="language-java">String downloadFilepath = &quot;c:temp&quot;;
-HashMap&lt;String, Object&gt; chromePrefs = new HashMap&lt;&gt;();
-chromePrefs.put(&quot;profile.default_content_settings.popups&quot;, 0);
-chromePrefs.put(&quot;download.default_directory&quot;, downloadFilepath);
-chromeOptions.setExperimentalOption(&quot;prefs&quot;, chromePrefs);
-chromeOptions.addArguments(&quot;--test-type&quot;);
-chromeOptions.addArguments(&quot;start-maximized&quot;, &quot;disable-popup-blocking&quot;);
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">downloadFilepath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;c:temp&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">chromePrefs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromePrefs</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;profile.default_content_settings.popups&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromePrefs</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;download.default_directory&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">downloadFilepath</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">setExperimentalOption</span><span class="p">(</span><span class="s">&quot;prefs&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">chromePrefs</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;--test-type&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;start-maximized&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;disable-popup-blocking&quot;</span><span class="p">);</span><span class="w"></span>
 
-String downloadFilepath = &quot;c:temp&quot;;
-HashMap&lt;String, Object&gt; chromePrefs = new HashMap&lt;&gt;();
-chromePrefs.put(&quot;profile.default_content_settings.popups&quot;, 0);
-chromePrefs.put(&quot;download.default_directory&quot;, downloadFilepath);
-chromeOptions.setExperimentalOption(&quot;prefs&quot;, chromePrefs);
-chromeOptions.addArguments(&quot;--test-type&quot;);
-chromeOptions.addArguments(&quot;start-maximized&quot;, &quot;disable-popup-blocking&quot;);
+<span class="n">String</span><span class="w"> </span><span class="n">downloadFilepath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;c:temp&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">chromePrefs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="n">chromePrefs</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;profile.default_content_settings.popups&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromePrefs</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;download.default_directory&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">downloadFilepath</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">setExperimentalOption</span><span class="p">(</span><span class="s">&quot;prefs&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">chromePrefs</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;--test-type&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">chromeOptions</span><span class="p">.</span><span class="na">addArguments</span><span class="p">(</span><span class="s">&quot;start-maximized&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;disable-popup-blocking&quot;</span><span class="p">);</span><span class="w"></span>
 
-@Test
-public void VerifyFileDownloadChrome() throws IOException {
- var expectedFilePath = Paths.get(&quot;c:tempTesting_Framework_2015_3_1314_2_Free.exe&quot;);
- try
- {
- driver.navigate().to(&quot;https://www.telerik.com/download-trial-file/v2/telerik-testing-framework&quot;);
- wait.until(x -&gt; Files.exists(expectedFilePath));
- long bytes = Files.size(expectedFilePath);
- Assert.assertEquals(4326192, bytes);
- }
- finally
- {
- if (Files.exists(expectedFilePath))
- {
- Files.delete(expectedFilePath);
- }
- }
-}
-</code></pre>
+<span class="nd">@Test</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">VerifyFileDownloadChrome</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">expectedFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;c:tempTesting_Framework_2015_3_1314_2_Free.exe&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="k">try</span><span class="w"></span>
+<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">to</span><span class="p">(</span><span class="s">&quot;https://www.telerik.com/download-trial-file/v2/telerik-testing-framework&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="n">expectedFilePath</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">size</span><span class="p">(</span><span class="n">expectedFilePath</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">Assert</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="mi">4326192</span><span class="p">,</span><span class="w"> </span><span class="n">bytes</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">finally</span><span class="w"></span>
+<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="n">expectedFilePath</span><span class="p">))</span><span class="w"></span>
+<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">expectedFilePath</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 
 

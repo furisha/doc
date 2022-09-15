@@ -737,6 +737,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../security-qa/spt_idor/" class="md-nav__link">
+        IDOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-qa/spt_csrf/" class="md-nav__link">
+        CSRF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../security-qa/spt_sql_injection/" class="md-nav__link">
         SQL Injection
       </a>
@@ -1043,66 +1071,60 @@ from xpath import xpath_list
 <details>
 <summary>BAD</summary>
 
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitForPageToLoad</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">string</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browserDriver</span><span class="p">.</span><span class="na">getCurrentUrl</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">Boolean</span><span class="w"> </span><span class="n">stringExists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">string</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">Count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 
-<pre><code class="language-java">public void waitForPageToLoad(String string){
-  String url = browserDriver.getCurrentUrl();
-  Boolean stringExists = url.contains(string);
-  int Count = 0;
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">Boolean</span><span class="p">.</span><span class="na">FALSE</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">stringExists</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">){</span><span class="w"></span>
+<span class="w">     </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">browserDriver</span><span class="p">.</span><span class="na">getCurrentUrl</span><span class="p">();</span><span class="w"></span>
+<span class="w">     </span><span class="n">stringExists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">string</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="n">Count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="c1">// TODO Auto-generated catch block</span><span class="w"></span>
+<span class="w">         </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  while (Boolean.FALSE.equals(stringExists) &amp;&amp; Count &lt; 100){
-     url = browserDriver.getCurrentUrl();
-     stringExists = url.contains(string);
-     Count = Count + 1;
-     try {
-        Thread.sleep(500);
-     } catch (InterruptedException e) {
-         // TODO Auto-generated catch block
-         e.printStackTrace();
-     }
-  }
-
-   //if(stringExists==false)
-   if(Boolean.FALSE.equals(stringExists))
-      throw new IllegalStateException(
-        “Page not loaded. Current page” + “is: “
-         + browserDriver.getCurrentUrl());
-   }
-}
-</code></pre>
-
+<span class="w">   </span><span class="c1">//if(stringExists==false)</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">Boolean</span><span class="p">.</span><span class="na">FALSE</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">stringExists</span><span class="p">))</span><span class="w"></span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalStateException</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="err">“</span><span class="n">Page</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">loaded</span><span class="p">.</span><span class="w"> </span><span class="n">Current</span><span class="w"> </span><span class="n">page</span><span class="err">”</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">“</span><span class="n">is</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="w"></span>
+<span class="w">         </span><span class="o">+</span><span class="w"> </span><span class="n">browserDriver</span><span class="p">.</span><span class="na">getCurrentUrl</span><span class="p">());</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 
 <details>
 <summary>GOOD</summary>
 
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">isUrlCorrect</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">keyword</span><span class="p">){</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 
-<pre><code class="language-java">public void isUrlCorrect(String keyword){ 
-  int count = 0;
+<span class="w">   </span><span class="k">do</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="n">count</span><span class="w"> </span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="n">waitFor</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">urlContains</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
 
-   do {
-     count ++;
-     waitFor(1);
-   } while (urlContains(keyword) == false &amp;&amp; count &lt; 30);
-
-   if(count == 30)
-     throw new PageNotDisplayedException(“Page not loaded”);; 
-}
-private void urlContains(String keyword) {
-   return driver.getCurrentUrl().contains(keyword);
-}
-</code></pre>
-
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PageNotDisplayedException</span><span class="p">(</span><span class="err">“</span><span class="n">Page</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">loaded</span><span class="err">”</span><span class="p">);;</span><span class="w"> </span>
+<span class="p">}</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">urlContains</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">keyword</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">getCurrentUrl</span><span class="p">().</span><span class="na">contains</span><span class="p">(</span><span class="n">keyword</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 <details>
 <summary>BEST</summary>
 
-
-<pre><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, 30);
-wait.until(ExpectedConditions.urlContains(keyword));
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="n">WebDriverWait</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+<span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">urlContains</span><span class="p">(</span><span class="n">keyword</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 
@@ -1110,41 +1132,37 @@ wait.until(ExpectedConditions.urlContains(keyword));
 <details>
 <summary>BAD</summary>
 
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Click</span><span class="p">(){</span><span class="w"></span>
 
-<pre><code class="language-java">public void Click(){
+<span class="w">  </span><span class="n">driver</span><span class="p">.</span><span class="na">manage</span><span class="p">().</span><span class="na">timeouts</span><span class="p">().</span><span class="na">implicitlyWait</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">TimeUnit</span><span class="p">.</span><span class="na">SECONDS</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">elementToBeClickable</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">click</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Clicked</span><span class="w"> </span><span class="n">webelement</span><span class="w"> </span><span class="n">at</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="o">+</span><span class="n">locator</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RuntimeException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">WaitMilliSeconds</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Boolean</span><span class="p">.</span><span class="na">FALSE</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="w"></span>
+<span class="w">                    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">isEnabled</span><span class="p">()))</span><span class="w"></span>
+<span class="w">       </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NoSuchElementException</span><span class="p">(</span><span class="w"></span>
+<span class="w">          </span><span class="err">“</span><span class="n">Elment</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">locator</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="o">+</span><span class="w"> </span><span class="n">locator</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">click</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
 
-  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-  try {
-    wait.until(ExpectedConditions.elementToBeClickable(locator));
-    driver.findElement(locator).click();
-    System.out.println(“Clicked webelement at: “+locator );
-  }
-  catch (RuntimeException e) {
-    System.out.println(e);
-    WaitMilliSeconds(500);
-    if (Boolean.FALSE.equals(
-                    driver.findElement(locator).isEnabled()))
-       throw new NoSuchElementException(
-          “Elment not found at locator: “+ locator);
-    driver.findElement(locator).click();
- }
-
-}
-</code></pre>
-
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 <details>
 <summary>GOOD</summary>
 
-
-<pre><code class="language-java">public void click(){
- WebElement element = this.wait.until(ExpectedConditions.
-                            elementToBeClickable(this.locator));
- element.click();
-}
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">click</span><span class="p">(){</span><span class="w"></span>
+<span class="w"> </span><span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="w"></span>
+<span class="w">                            </span><span class="nf">elementToBeClickable</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">locator</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">click</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 
@@ -1152,43 +1170,39 @@ wait.until(ExpectedConditions.urlContains(keyword));
 <details>
 <summary>BAD</summary>
 
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">SendKeys</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">){</span><span class="w"></span>
+<span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="k">try</span><span class="w"></span>
+<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">text</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Entered</span><span class="w"> </span><span class="n">sendKey</span><span class="w"> </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="o">+</span><span class="n">text</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//SendKeyEnter();</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Click</span><span class="w"> </span><span class="n">Enter</span><span class="err">”</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">WaitMilliSeconds</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">RuntimeException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“\</span><span class="n">nSecond</span><span class="w"> </span><span class="n">attempt</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">SendKey</span><span class="w"> </span><span class="n">text</span><span class="p">:</span><span class="err">”</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">text</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">Wait</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">text</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">SendKeyEnter</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
 
-<pre><code class="language-java">public void SendKeys(String text){
- wait = (new WebDriverWait(driver, 4));
- try
- {
-    wait.until(ExpectedConditions
-        .visibilityOfElementLocated(locator));
-    driver.findElement(locator).sendKeys(text);
-    System.out.println(“Entered sendKey text: “+text);
-    //SendKeyEnter();
-    System.out.println(“Click Enter”);
-    WaitMilliSeconds(1000);
- }
- catch(RuntimeException e)
- {
-    System.out.println(“\nSecond attempt to SendKey text:” + text);
-    Wait();
-    driver.findElement(locator).sendKeys(text);
-    SendKeyEnter();
- }
-
-}
-</code></pre>
-
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 <details>
 <summary>GOOD</summary>
 
-
-<pre><code class="language-java">public void sendKeys(String text){
-  WebElement element = wait.until(ExpectedConditions
-                          .visibilityOfElementLocated(locator));
-  element.sendKeys(text);
-}
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendKeys</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="w"></span>
+<span class="w">                          </span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="n">element</span><span class="p">.</span><span class="na">sendKeys</span><span class="p">(</span><span class="n">text</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 
@@ -1196,32 +1210,28 @@ wait.until(ExpectedConditions.urlContains(keyword));
 <details>
 <summary>BAD</summary>
 
-
-<pre><code class="language-java">public void WaitUntilWebElementClickable(){
- try {
-   wait.until(ExpectedConditions.elementToBeClickable(locator));
- }
- catch (RuntimeException e) {
-   WaitMilliSeconds(2000);
-   driver.navigate().refresh();
-   System.out.println(“refresh internally…”);
-   wait.until(ExpectedConditions.elementToBeClickable(
-        driver.findElement(locator)));
- }
-}
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">WaitUntilWebElementClickable</span><span class="p">(){</span><span class="w"></span>
+<span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">elementToBeClickable</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RuntimeException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">WaitMilliSeconds</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="n">driver</span><span class="p">.</span><span class="na">navigate</span><span class="p">().</span><span class="na">refresh</span><span class="p">();</span><span class="w"></span>
+<span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">refresh</span><span class="w"> </span><span class="n">internally</span><span class="err">…”</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">elementToBeClickable</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">)));</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 <details>
 <summary>GOOD</summary>
 
-
-<pre><code class="language-java">public void waitUntilElementClickable(){
- wait.until(ExpectedConditions.elementToBeClickable(locator));
-}
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">waitUntilElementClickable</span><span class="p">(){</span><span class="w"></span>
+<span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="na">elementToBeClickable</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 
@@ -1229,33 +1239,29 @@ wait.until(ExpectedConditions.urlContains(keyword));
 <details>
 <summary>BAD</summary>
 
-
-<pre><code class="language-java">public String getText() {
- try {
-   wait.until(ExpectedConditions
-          .visibilityOfElementLocated(locator));
-   return driver.findElement(locator).getText().toString().trim();
- }
- catch (RuntimeException e){
-   System.out.println(“getText() exception: “+ e);
-   return “”;
- }
-}
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getText</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="w"></span>
+<span class="w">          </span><span class="p">.</span><span class="na">visibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span><span class="w"></span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="na">findElement</span><span class="p">(</span><span class="n">locator</span><span class="p">).</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RuntimeException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span><span class="w"></span>
+<span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">getText</span><span class="p">()</span><span class="w"> </span><span class="n">exception</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="err">“”</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 <details>
 <summary>GOOD</summary>
 
-
-<pre><code class="language-java">public String getText() {
- WebElement element = wait.until(ExpectedConditions.
-                         visibilityOfElementLocated(locator));
- return element.getText().trim();
-}
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getText</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="n">WebElement</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait</span><span class="p">.</span><span class="na">until</span><span class="p">(</span><span class="n">ExpectedConditions</span><span class="p">.</span><span class="w"></span>
+<span class="w">                         </span><span class="nf">visibilityOfElementLocated</span><span class="p">(</span><span class="n">locator</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 </details>
 

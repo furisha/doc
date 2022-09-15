@@ -668,6 +668,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../security-qa/spt_idor/" class="md-nav__link">
+        IDOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-qa/spt_csrf/" class="md-nav__link">
+        CSRF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../security-qa/spt_sql_injection/" class="md-nav__link">
         SQL Injection
       </a>
@@ -774,33 +802,33 @@
 <p>Step 1. Import setup from SeleniumBase (BaseCase class inherits from the unittest.TestCase class)</p>
 </li>
 </ul>
-<pre><code class="language-python">from seleniumbase import BaseCase
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">seleniumbase</span> <span class="kn">import</span> <span class="n">BaseCase</span>
+</code></pre></div>
 <ul>
 <li>Step 2. Create class HomePage(BaseCase)</li>
 </ul>
-<pre><code class="language-python">class HomePage(BaseCase):
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HomePage</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+</code></pre></div>
 <ul>
 <li>Step 3. Find web elements and store it in attribute value.</li>
 </ul>
-<pre><code class="language-python">    # home page elements
-    logo_icon = &quot;.custom-logo-link&quot;
-    get_started_btn = &quot;#get-started&quot;
-    heading_text = &quot;h1&quot;
-    copyright_text = &quot;.tg-site-footer-section-1&quot;
-    menu_links = &quot;//*[starts-with(@id, 'menu-item')]&quot;
-    username = &quot;#username&quot;
-    password = &quot;#password&quot;
-    login_button = &quot;button[name=login]&quot;
-    logout_button = &quot;.woocommerce-MyAccount-content a[href*=logout]&quot;
-    title = &quot;Practice E-Commerce Site – Automation Bro&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="c1"># home page elements</span>
+    <span class="n">logo_icon</span> <span class="o">=</span> <span class="s2">&quot;.custom-logo-link&quot;</span>
+    <span class="n">get_started_btn</span> <span class="o">=</span> <span class="s2">&quot;#get-started&quot;</span>
+    <span class="n">heading_text</span> <span class="o">=</span> <span class="s2">&quot;h1&quot;</span>
+    <span class="n">copyright_text</span> <span class="o">=</span> <span class="s2">&quot;.tg-site-footer-section-1&quot;</span>
+    <span class="n">menu_links</span> <span class="o">=</span> <span class="s2">&quot;//*[starts-with(@id, &#39;menu-item&#39;)]&quot;</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;#username&quot;</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;#password&quot;</span>
+    <span class="n">login_button</span> <span class="o">=</span> <span class="s2">&quot;button[name=login]&quot;</span>
+    <span class="n">logout_button</span> <span class="o">=</span> <span class="s2">&quot;.woocommerce-MyAccount-content a[href*=logout]&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Practice E-Commerce Site – Automation Bro&quot;</span>
+</code></pre></div>
 <ul>
 <li>Step 4. Create page object that we can use later in out HomeTest(HomePage) and call it "login"</li>
 </ul>
-<pre><code class="language-python">    def login(self):
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></pre></div>
 <ul>
 <li>Step 5. Within login create this actions for:<ol>
 <li>Open homepage url (<strong><em>self.open()</em></strong>)</li>
@@ -811,19 +839,19 @@
 </ol>
 </li>
 </ul>
-<pre><code class="language-python">        # actions for successful login and assertion
-        self.open(&quot;https://practice.automationbro.com/my-account&quot;)
-        self.add_text(self.username, &quot;testuser00&quot;)
-        self.add_text(self.password, &quot;zcbAKa4j7LpXiC6&quot;)
-        self.click(self.login_button)
-        self.assert_text(&quot;Log out&quot;, &quot;.woocommerce-MyAccount-content&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># actions for successful login and assertion</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://practice.automationbro.com/my-account&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="s2">&quot;testuser00&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="s2">&quot;zcbAKa4j7LpXiC6&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">login_button</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Log out&quot;</span><span class="p">,</span> <span class="s2">&quot;.woocommerce-MyAccount-content&quot;</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>Step 6. Create one more page object (function, method...) and name it "open_page"</li>
 </ul>
-<pre><code class="language-python">        # action: open page
-        self.open(&quot;https://practice.automationbro.com&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># action: open page</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://practice.automationbro.com&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="hometest-test">HomeTest (Test)</h2>
 <ul>
 <li>Create "tests" folder</li>
@@ -834,42 +862,42 @@
 <p>Step 1. Import HomePage from POM "home_page"</p>
 </li>
 </ul>
-<pre><code class="language-python">from page_objects.home_page import HomePage
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">page_objects.home_page</span> <span class="kn">import</span> <span class="n">HomePage</span>
+</code></pre></div>
 <ul>
 <li>Step 2. Create "class HomeTest(HomePage):"</li>
 </ul>
-<pre><code class="language-python">class HomeTest(HomePage):
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HomeTest</span><span class="p">(</span><span class="n">HomePage</span><span class="p">):</span>
+</code></pre></div>
 <ul>
 <li>Step 3. Create "setUp", and "tearDown". This test will start before and after each test (etc. login, logout).</li>
 </ul>
-<pre><code class="language-python">    def setUp(self):
-        # call the parent BaseCase class setup method
-        super().setUp()
-        print(&quot;RUNNING BEFORE EACH TEST&quot;)
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># call the parent BaseCase class setup method</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RUNNING BEFORE EACH TEST&quot;</span><span class="p">)</span>
 
-        # login
-        self.login()
+        <span class="c1"># login</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>
 
-        # open home page
-        self.open_page()
+        <span class="c1"># open home page</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open_page</span><span class="p">()</span>
 
-    def tearDown(self):
-        print(&quot;RUNNING AFTER EACH TEST&quot;)
+    <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RUNNING AFTER EACH TEST&quot;</span><span class="p">)</span>
 
-        # logout
-        self.open(&quot;https://practice.automationbro.com/my-account&quot;)
-        self.click(HomePage.logout_button)
-        self.assert_element_visible(HomePage.login_button)
+        <span class="c1"># logout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;https://practice.automationbro.com/my-account&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">HomePage</span><span class="o">.</span><span class="n">logout_button</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element_visible</span><span class="p">(</span><span class="n">HomePage</span><span class="o">.</span><span class="n">login_button</span><span class="p">)</span>
 
-        super().tearDown()
-</code></pre>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">tearDown</span><span class="p">()</span>
+</code></pre></div>
 <ul>
 <li>Step 4. Create test_home_page test. This is actual our test for home page</li>
 </ul>
-<pre><code class="language-python">    def test_home_page(self):
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">test_home_page</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></pre></div>
 <ul>
 <li>
 <p>Step 5. Create actions for our test (included in requirements or acceptance criteria):</p>
@@ -882,51 +910,50 @@
 </ol>
 </li>
 </ul>
-<pre><code class="language-python">        # assert page title
-        self.assert_title(HomePage.title)
-        # assert logo
-        self.assert_element(HomePage.logo_icon)
-        # click on the get started button and assert the url
-        self.click(HomePage.get_started_btn)
-        get_started_url = self.get_current_url()
-        self.assert_equal(get_started_url, &quot;https://practice.automationbro.com/#get-started&quot;)
-        self.assert_true(&quot;get-started&quot; in get_started_url)
-        # get the text of the header and assert the value
-        self.assert_text(&quot;Think different. Make different.&quot;, HomePage.heading_text)
-        # excercise: scroll to bottom and assert the copyright text
-        self.scroll_to_bottom()
-        # print(self.get_text(&quot;tg-site-footer-section-1&quot;))
-        self.assert_text(&quot;Copyright © 2020 Automation Bro&quot;, HomePage.copyright_text)
-</code></pre>
+<div class="highlight"><pre><span></span><code>        <span class="c1"># assert page title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_title</span><span class="p">(</span><span class="n">HomePage</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="c1"># assert logo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_element</span><span class="p">(</span><span class="n">HomePage</span><span class="o">.</span><span class="n">logo_icon</span><span class="p">)</span>
+        <span class="c1"># click on the get started button and assert the url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">HomePage</span><span class="o">.</span><span class="n">get_started_btn</span><span class="p">)</span>
+        <span class="n">get_started_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_current_url</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_equal</span><span class="p">(</span><span class="n">get_started_url</span><span class="p">,</span> <span class="s2">&quot;https://practice.automationbro.com/#get-started&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_true</span><span class="p">(</span><span class="s2">&quot;get-started&quot;</span> <span class="ow">in</span> <span class="n">get_started_url</span><span class="p">)</span>
+        <span class="c1"># get the text of the header and assert the value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Think different. Make different.&quot;</span><span class="p">,</span> <span class="n">HomePage</span><span class="o">.</span><span class="n">heading_text</span><span class="p">)</span>
+        <span class="c1"># excercise: scroll to bottom and assert the copyright text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scroll_to_bottom</span><span class="p">()</span>
+        <span class="c1"># print(self.get_text(&quot;tg-site-footer-section-1&quot;))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_text</span><span class="p">(</span><span class="s2">&quot;Copyright © 2020 Automation Bro&quot;</span><span class="p">,</span> <span class="n">HomePage</span><span class="o">.</span><span class="n">copyright_text</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>Step 6. Create second test "test_menu_links"</li>
 </ul>
-<pre><code class="language-python">def test_menu_links(self):
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_menu_links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</code></pre></div>
 <ul>
 <li>Step 7. Create actions for our second test</li>
 </ul>
-<pre><code class="language-python">        expected_links = ['About', 'Shop', 'Blog', 'Contact', 'My account', 'Home', 'About', 'Blog', 'Contact', 'Support Form']
+<div class="highlight"><pre><span></span><code>        <span class="n">expected_links</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;About&#39;</span><span class="p">,</span> <span class="s1">&#39;Shop&#39;</span><span class="p">,</span> <span class="s1">&#39;Blog&#39;</span><span class="p">,</span> <span class="s1">&#39;Contact&#39;</span><span class="p">,</span> <span class="s1">&#39;My account&#39;</span><span class="p">,</span> <span class="s1">&#39;Home&#39;</span><span class="p">,</span> <span class="s1">&#39;About&#39;</span><span class="p">,</span> <span class="s1">&#39;Blog&#39;</span><span class="p">,</span> <span class="s1">&#39;Contact&#39;</span><span class="p">,</span> <span class="s1">&#39;Support Form&#39;</span><span class="p">]</span>
 
-        # find menu links elements
-        menu_links_el = self.find_elements(HomePage.menu_links)
+        <span class="c1"># find menu links elements</span>
+        <span class="n">menu_links_el</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">HomePage</span><span class="o">.</span><span class="n">menu_links</span><span class="p">)</span>
 
-        # loop through menu links
-        for idx, link_el in enumerate(menu_links_el):
-            print(idx, link_el.text)
-</code></pre>
+        <span class="c1"># loop through menu links</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">link_el</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">menu_links_el</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">link_el</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="run-test-with-commands">Run test with <a href="https://seleniumbase.io/help_docs/customizing_test_runs/">commands</a></h2>
 <p>Type the following command in terminal</p>
-<pre><code class="language-python">pytest -k &quot;HomeTest&quot;
-pytest -k &quot;HomeTest&quot; --dashboard
-pytest -k &quot;HomeTest&quot; --dashboard --rs --headless
-pytest -k &quot;HomeTest&quot; --html=report.html
-pytest -k &quot;HomeTest&quot; --firefox
-pytest -k &quot;HomeTest&quot; --safari
-pytest -n=4 / number of chrome, safari, firefox instance
-pytest -k &quot;HomeTest&quot; --headless
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">pytest</span> <span class="o">-</span><span class="n">k</span> <span class="s2">&quot;HomeTest&quot;</span>
+<span class="n">pytest</span> <span class="o">-</span><span class="n">k</span> <span class="s2">&quot;HomeTest&quot;</span> <span class="o">--</span><span class="n">dashboard</span>
+<span class="n">pytest</span> <span class="o">-</span><span class="n">k</span> <span class="s2">&quot;HomeTest&quot;</span> <span class="o">--</span><span class="n">dashboard</span> <span class="o">--</span><span class="n">rs</span> <span class="o">--</span><span class="n">headless</span>
+<span class="n">pytest</span> <span class="o">-</span><span class="n">k</span> <span class="s2">&quot;HomeTest&quot;</span> <span class="o">--</span><span class="n">html</span><span class="o">=</span><span class="n">report</span><span class="o">.</span><span class="n">html</span>
+<span class="n">pytest</span> <span class="o">-</span><span class="n">k</span> <span class="s2">&quot;HomeTest&quot;</span> <span class="o">--</span><span class="n">firefox</span>
+<span class="n">pytest</span> <span class="o">-</span><span class="n">k</span> <span class="s2">&quot;HomeTest&quot;</span> <span class="o">--</span><span class="n">safari</span>
+<span class="n">pytest</span> <span class="o">-</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span> <span class="o">/</span> <span class="n">number</span> <span class="n">of</span> <span class="n">chrome</span><span class="p">,</span> <span class="n">safari</span><span class="p">,</span> <span class="n">firefox</span> <span class="n">instance</span>
+<span class="n">pytest</span> <span class="o">-</span><span class="n">k</span> <span class="s2">&quot;HomeTest&quot;</span> <span class="o">--</span><span class="n">headless</span>
+</code></pre></div>
 <h3 id="pytest-options-for-seleniumbase">Pytest options for SeleniumBase</h3>
 <p>SeleniumBase's pytest plugin lets you customize test runs from the CLI (Command-Line Interface), which adds options for setting/enabling the browser type, Dashboard Mode, Demo Mode, Headless Mode, Mobile Mode, Multi-threading Mode, Recorder Mode, reuse-session mode, proxy config, user agent config, browser extensions, html-report mode, and more.</p>
 <h2 id="link">Link</h2>

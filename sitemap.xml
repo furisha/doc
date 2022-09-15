@@ -2,102 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://furisha.github.io/doc/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/index.en/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/about/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/code_examples/selenium/ce_selenium_java/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/code_examples/selenium/ce_seleniumbase_python/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/framework_setup/fs_cypress/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/framework_setup/fs_selenium_java/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/framework_setup/fs_selenium_python/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/framework_setup/fs_selenium_python_seleniumbase/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/qa-box/qa_code_review/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/qa-box/qa_coding_guidelines/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/qa-box/qa_coding_guidelines_advanced/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/qa-box/qa_expert/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/qa-box/qa_good_practice/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/qa-box/qa_skills/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/qa-box/qa_terms/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://furisha.github.io/doc/pages/security-qa/spt_csrf/</loc>
+         <lastmod>2022-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://furisha.github.io/doc/pages/security-qa/spt_idor/</loc>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/security-qa/spt_penetration_testing/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/security-qa/spt_privilege_escalation_attacks/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/security-qa/spt_security_testing/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://furisha.github.io/doc/pages/security-qa/spt_sql_injection/</loc>
-         <lastmod>2022-09-13</lastmod>
+         <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

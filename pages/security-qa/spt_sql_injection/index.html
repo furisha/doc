@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security-qa" class="md-skip">
+        <a href="#security-qa-sql-injection" class="md-skip">
           Skip to content
         </a>
       
@@ -591,6 +591,34 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../spt_idor/" class="md-nav__link">
+        IDOR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spt_csrf/" class="md-nav__link">
+        CSRF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -602,9 +630,82 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SQL Injection
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         SQL Injection
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-impact-of-a-successful-sql-injection-attack" class="md-nav__link">
+    What is the impact of a successful SQL injection attack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-injection-examples" class="md-nav__link">
+    SQL injection examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieving-hidden-data" class="md-nav__link">
+    Retrieving hidden data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subverting-application-logic" class="md-nav__link">
+    Subverting application logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieving-data-from-other-database-tables" class="md-nav__link">
+    Retrieving data from other database tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examining-the-database" class="md-nav__link">
+    Examining the database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blind-sql-injection-vulnerabilities" class="md-nav__link">
+    Blind SQL injection vulnerabilities
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -637,6 +738,63 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-impact-of-a-successful-sql-injection-attack" class="md-nav__link">
+    What is the impact of a successful SQL injection attack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-injection-examples" class="md-nav__link">
+    SQL injection examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieving-hidden-data" class="md-nav__link">
+    Retrieving hidden data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subverting-application-logic" class="md-nav__link">
+    Subverting application logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieving-data-from-other-database-tables" class="md-nav__link">
+    Retrieving data from other database tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examining-the-database" class="md-nav__link">
+    Examining the database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blind-sql-injection-vulnerabilities" class="md-nav__link">
+    Blind SQL injection vulnerabilities
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -649,7 +807,70 @@
                 
 
 
-<h1 id="security-qa">[Security-QA]</h1>
+<h1 id="security-qa-sql-injection">[Security-QA] <code>SQL Injection</code></h1>
+<p>SQL injection is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. It generally allows an attacker to view data that they are not normally able to retrieve. This might include data belonging to other users, or any other data that the application itself is able to access. In many cases, an attacker can modify or delete this data, causing persistent changes to the application's content or behavior</p>
+<h2 id="what-is-the-impact-of-a-successful-sql-injection-attack">What is the impact of a successful SQL injection attack</h2>
+<p>A successful SQL injection attack can result in unauthorized access to sensitive data, such as passwords, credit card details, or personal user information.</p>
+<h2 id="sql-injection-examples">SQL injection examples</h2>
+<p>There are a wide variety of SQL injection vulnerabilities, attacks, and techniques, which arise in different situations. Some common SQL injection examples include:</p>
+<ul>
+<li>Retrieving hidden data, where you can modify an SQL query to return additional results.</li>
+<li>Subverting application logic, where you can change a query to interfere with the application's logic.</li>
+<li>UNION attacks, where you can retrieve data from different database tables.</li>
+<li>Examining the database, where you can extract information about the version and structure of the database.</li>
+<li>Blind SQL injection, where the results of a query you control are not returned in the application's responses.</li>
+</ul>
+<h2 id="retrieving-hidden-data">Retrieving hidden data</h2>
+<p>Consider a shopping application that displays products in different categories. When the user clicks on the Gifts category, their browser requests the URL:</p>
+<p><code>https://insecure-website.com/products?category=Gifts</code></p>
+<p>This causes the application to make an SQL query to retrieve details of the relevant products from the database:</p>
+<p><code>SELECT * FROM products WHERE category = 'Gifts' AND released = 1</code></p>
+<p>This SQL query asks the database to return:</p>
+<ul>
+<li>all details (*)</li>
+<li>from the products table</li>
+<li>where the category is Gifts</li>
+<li>and released is 1.</li>
+</ul>
+<p>The restriction released = 1 is being used to hide products that are not released. For unreleased products, presumably released = 0.</p>
+<p>The application doesn't implement any defenses against SQL injection attacks, so an attacker can construct an attack like:</p>
+<p><code>https://insecure-website.com/products?category=Gifts'--</code></p>
+<p>This results in the SQL query:</p>
+<p><code>SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1</code></p>
+<p>The key thing here is that the double-dash sequence -- is a comment indicator in SQL, and means that the rest of the query is interpreted as a comment. This effectively removes the remainder of the query, so it no longer includes AND released = 1. This means that all products are displayed, including unreleased products.</p>
+<p>Going further, an attacker can cause the application to display all the products in any category, including categories that they don't know about:</p>
+<p><code>https://insecure-website.com/products?category=Gifts'+OR+1=1--</code></p>
+<p>This results in the SQL query:</p>
+<p><code>SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1</code></p>
+<p>The modified query will return all items where either the category is Gifts, or 1 is equal to 1. Since 1=1 is always true, the query will return all items.</p>
+<h2 id="subverting-application-logic">Subverting application logic</h2>
+<p>Consider an application that lets users log in with a username and password. If a user submits the username wiener and the password bluecheese, the application checks the credentials by performing the following SQL query:</p>
+<p><code>SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese'</code></p>
+<p>If the query returns the details of a user, then the login is successful. Otherwise, it is rejected.</p>
+<p>Here, an attacker can log in as any user without a password simply by using the SQL comment sequence -- to remove the password check from the WHERE clause of the query. For example, submitting the username administrator'-- and a blank password results in the following query:</p>
+<p>SELECT * FROM users WHERE username = 'administrator'--' AND password = ''</p>
+<p>This query returns the user whose username is administrator and successfully logs the attacker in as that user.</p>
+<h2 id="retrieving-data-from-other-database-tables">Retrieving data from other database tables</h2>
+<p>In cases where the results of an SQL query are returned within the application's responses, an attacker can leverage an SQL injection vulnerability to retrieve data from other tables within the database. This is done using the UNION keyword, which lets you execute an additional SELECT query and append the results to the original query.</p>
+<p>For example, if an application executes the following query containing the user input "Gifts":</p>
+<p><code>SELECT name, description FROM products WHERE category = 'Gifts'</code></p>
+<p>then an attacker can submit the input:</p>
+<p><code>' UNION SELECT username, password FROM users--</code></p>
+<p>This will cause the application to return all usernames and passwords along with the names and descriptions of products.</p>
+<h2 id="examining-the-database">Examining the database</h2>
+<p>Following initial identification of an SQL injection vulnerability, it is generally useful to obtain some information about the database itself. This information can often pave the way for further exploitation.</p>
+<p>You can query the version details for the database. The way that this is done depends on the database type, so you can infer the database type from whichever technique works. For example, on Oracle you can execute:</p>
+<p><code>SELECT * FROM v$version</code></p>
+<p>You can also determine what database tables exist, and which columns they contain. For example, on most databases you can execute the following query to list the tables:</p>
+<p><code>SELECT * FROM information_schema.tables</code></p>
+<h2 id="blind-sql-injection-vulnerabilities">Blind SQL injection vulnerabilities</h2>
+<p>Many instances of SQL injection are blind vulnerabilities. This means that the application does not return the results of the SQL query or the details of any database errors within its responses. Blind vulnerabilities can still be exploited to access unauthorized data, but the techniques involved are generally more complicated and difficult to perform.</p>
+<p>Depending on the nature of the vulnerability and the database involved, the following techniques can be used to exploit blind SQL injection vulnerabilities:</p>
+<ul>
+<li>You can change the logic of the query to trigger a detectable difference in the application's response depending on the truth of a single condition. This might involve injecting a new condition into some Boolean logic, or conditionally triggering an error such as a divide-by-zero.</li>
+<li>You can conditionally trigger a time delay in the processing of the query, allowing you to infer the truth of the condition based on the time that the application takes to respond.</li>
+<li>You can trigger an out-of-band network interaction, using OAST techniques. This technique is extremely powerful and works in situations where the other techniques do not. Often, you can directly exfiltrate data via the out-of-band channel, for example by placing the data into a DNS lookup for a domain that you control.</li>
+</ul>
 
 
 
@@ -668,7 +889,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../spt_privilege_escalation_attacks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Privilege Escalation Attacks" rel="prev">
+        <a href="../spt_csrf/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CSRF" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -677,7 +898,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Privilege Escalation Attacks
+              CSRF
             </div>
           </div>
         </a>
