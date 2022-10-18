@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#insecure-direct-object-references" class="md-skip">
+        <a href="#security-qa-idor" class="md-skip">
           Skip to content
         </a>
       
@@ -258,6 +258,20 @@
           QA Box
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_software_testing_roles/" class="md-nav__link">
+        Software Testing Roles
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -859,8 +873,8 @@
                 
 
 
-<h1 id="insecure-direct-object-references">Insecure Direct Object References</h1>
-<p>When a web server processes a user’s request, it determines the resource accessed using parameters stated within the HTTP request. The direct object reference is information that is used to locate and access a particular resource. While the server is retrieving a resource, attackers can manipulate these parameters and access internal implementation object details in the event of a lack of adequate server-side validation. This attack is known as an Insecure Direct Object Reference (IDOR) vulnerability.</p>
+<h1 id="security-qa-idor">[Security-QA] <code>IDOR</code></h1>
+<p>When a web server processes a user’s request, it determines the resource accessed using parameters stated within the HTTP request. The direct object reference is information that is used to locate and access a particular resource. While the server is retrieving a resource, attackers can manipulate these parameters and access internal implementation object details in the event of a lack of adequate server-side validation. This attack is known as an <code>I</code>nsecure <code>D</code>irect <code>O</code>bject <code>R</code>eference (<code>IDOR</code>) vulnerability.</p>
 <p>Insecure Direct Object References (IDOR) occur when an application provides direct access to objects based on user-supplied input. As a result of this vulnerability, attackers can bypass authorization and access resources in the system directly, for example, database records or files. Insecure Direct Object References allow attackers to bypass authorization and access resources directly by modifying the value of a parameter used to directly point to an object. Such resources can be database entries belonging to other users, files in the system, and more. This is caused by the fact that the application takes user-supplied input and uses it to retrieve an object without performing sufficient authorization checks.</p>
 <h2 id="what-is-insecure-direct-object-reference">What is Insecure Direct Object Reference</h2>
 <p>An Insecure Direct Object Reference flaw occurs when the server fails to validate incoming HTTP requests to access objects. Since the application cannot determine the authenticity of the user trying to access an object, it reveals the underlying object details to the attackers. Attackers thereby gain unauthorized access to the object and modify the value of the ID parameter for the object to fulfill their adversary acts.</p>
@@ -890,13 +904,15 @@
 <p>Attackers manipulate a record pattern to modify large data sets that they are not authorized to access.</p>
 <h2 id="idor-examples">IDOR Examples</h2>
 <h3 id="direct-reference-to-database-objects">direct reference to database objects</h3>
-<p>Consider a website that uses the following URL to access the customer account page, by retrieving information from the back-end database:
-<code>https://insecure-website.com/customer_account?customer_number=132355</code></p>
+<p>Consider a website that uses the following URL to access the customer account page, by retrieving information from the back-end database:</p>
+<pre><code>https://insecure-website.com/customer_account?customer_number=132355
+</code></pre>
 <p>Here, the customer number is used directly as a record index in queries that are performed on the back-end database. If no other controls are in place, an attacker can simply modify the customer_number value, bypassing access controls to view the records of other customers. This is an example of an IDOR vulnerability leading to horizontal privilege escalation.</p>
 <p>An attacker might be able to perform horizontal and vertical privilege escalation by altering the user to one with additional privileges while bypassing access controls. Other possibilities include exploiting password leakage or modifying parameters once the attacker has landed in the user's accounts page, for example.</p>
 <h3 id="idor-vulnerability-with-direct-reference-to-static-files">IDOR vulnerability with direct reference to static files</h3>
-<p>IDOR vulnerabilities often arise when sensitive resources are located in static files on the server-side filesystem. For example, a website might save chat message transcripts to disk using an incrementing filename, and allow users to retrieve these by visiting a URL like the following:
-<code>https://insecure-website.com/static/12144.txt</code></p>
+<p>IDOR vulnerabilities often arise when sensitive resources are located in static files on the server-side filesystem. For example, a website might save chat message transcripts to disk using an incrementing filename, and allow users to retrieve these by visiting a URL like the following:</p>
+<pre><code>https://insecure-website.com/static/12144.txt
+</code></pre>
 <p>In this situation, an attacker can simply modify the filename to retrieve a transcript created by another user and potentially obtain user credentials and other sensitive data.</p>
 
 

@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-site-request-forgery-csrf" class="md-skip">
+        <a href="#security-qa-csrf" class="md-skip">
           Skip to content
         </a>
       
@@ -258,6 +258,20 @@
           QA Box
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa-box/qa_software_testing_roles/" class="md-nav__link">
+        Software Testing Roles
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -677,36 +691,39 @@
                 
 
 
-<h1 id="cross-site-request-forgery-csrf">Cross Site Request Forgery (CSRF)</h1>
-<p>CSRF is being able to force the user to do a specific action on the target website from your website, usually via an HTML form and is rather straightforward to find.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">”/login”method=”POST”</span><span class="p">&gt;</span>
-</code></pre></div>
+<h1 id="security-qa-csrf">[Security-QA] <code>CSRF</code></h1>
+<p><code>C</code>ross <code>S</code>ite <code>R</code>equest <code>F</code>orgery (CSRF) is being able to force the user to do a specific action on the target website from your website, usually via an HTML form and is rather straightforward to find.</p>
+<pre><code>&lt;form action=”/login”method=”POST”&gt;
+</code></pre>
 <p>An example of a CSRF bug is forcing the user to change their account email to one controlled by you, which would lead to account takeover. Developers can introduce CSRF protection very easily but still some developers opt to create custom code instead. When first hunting for CSRF bugs I look for areas on the website which should contain protection around them, such as updating your account information. I know this sounds a bit silly but from actually proving a certain feature does have security can again give you a clear indication to the security throughout the site. What behavior do you see when sending a blank CSRF value, did it reveal any framework information from an error? Did it reflect your changes but with a CSRF error? Have you seen this parameter name used on other websites? Perhaps there isn’t even any protection! Test their most secure features (account functions usually as mentioned above) and work your way backwards. As you continue testing the website you may discover that some features have different CSRF protection. Now consider, why? Different team? Old codebase? Perhaps a different parameter name is used and now you can hunt specifically for this parameter knowing it’s vulnerable.</p>
 <p>One common approach developers take is checking the referer header value and if it isn't their website, then drop the request. However this backfires because sometimes the checks are only executed if the referer header is actually found, and if it isn't, no checks done. You can get a blank referrer from the following:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;referrer&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;no-referrer&quot;</span> <span class="p">/&gt;</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">”data:text/html;base64,form_code_here”</span><span class="p">&gt;</span>
-</code></pre></div>
+<pre><code>&lt;meta name="referrer" content="no-referrer" /&gt;
+&lt;iframe src=”data:text/html;base64,form_code_here”&gt;
+</code></pre>
 <p>As well as this sometimes they'll only check if their domain is found in the referer, so creating a directory on your site &amp; visiting https://www.yoursite.com/https://www.theirsite.com/ may bypass the checks. Or what about https://www.theirsite.computer/ ? Again, to begin with I am focused purely on finding areas that should contain CSRF protection (sensitive areas!), and then checking if they have created custom filtering. Where there’s a filter there is usually a bypass!</p>
 <p>When hunting for CSRF there isn’t really a list of “common” areas to hunt for as every website contains different features, but typically all sensitive features should be protected from CSRF, so find them and test there. For example if the website allows you to checkout, can you force the user to checkout thus forcing their card to be charged?</p>
 <!-- [Hover me][example]
-[example]: https://example.com "I'm a tooltip!"
+[example]: https://example.com "I'm a tooltip!" -->
 
-!!! example
-
-    === "Unordered List"
-
-        <div class="highlight"><pre><span></span><code><span class="k">*</span> Sed sagittis eleifend rutrum
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Unordered List</label><label for="__tabbed_1_2">Ordered List</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">*</span> Sed sagittis eleifend rutrum
 <span class="k">*</span> Donec vitae suscipit est
 <span class="k">*</span> Nulla tempor lobortis orci
 </code></pre></div>
-
-    === "Ordered List"
-
-        ``` markdown
-        1. Sed sagittis eleifend rutrum
-        2. Donec vitae suscipit est
-        3. Nulla tempor lobortis orci
-        ``` -->
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">1.</span> Sed sagittis eleifend rutrum
+<span class="k">2.</span> Donec vitae suscipit est
+<span class="k">3.</span> Nulla tempor lobortis orci
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 
 
